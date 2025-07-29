@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { BookOpen, Code, ShoppingCart, ChevronRight, Check } from 'lucide-react';
+import { BookOpen, Code, ShoppingCart, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -10,94 +11,153 @@ const Services = () => {
     {
       id: 0,
       title: "Academic Writing",
-      description: "Professional academic support for students and researchers",
+      description: "Premium academic support with expert research and analysis",
       icon: BookOpen,
-      color: "text-primary",
-      bgColor: "bg-primary/10",
+      color: "text-accent-coral",
+      bgColor: "bg-accent-coral/10",
+      gradientFrom: "from-accent-coral/20",
+      gradientTo: "to-accent-coral/5",
       subcategories: [
-        { name: "Research Papers", description: "In-depth research and analysis for academic papers" },
-        { name: "Thesis and Dissertations", description: "Comprehensive support for graduate-level work" },
-        { name: "Essays and Assignments", description: "High-quality essays and coursework assistance" },
-        { name: "Editing & Proofreading", description: "Professional editing and proofreading services" }
+        { 
+          name: "Research Papers", 
+          description: "In-depth research with scholarly analysis and citations",
+          link: "/services/research-papers"
+        },
+        { 
+          name: "Thesis & Dissertations", 
+          description: "Comprehensive graduate-level academic support",
+          link: "/services/thesis-dissertations"
+        },
+        { 
+          name: "Essays & Assignments", 
+          description: "High-quality essays with original content and analysis",
+          link: "/services/essays-assignments"
+        },
+        { 
+          name: "Editing & Proofreading", 
+          description: "Professional editing with grammar and style enhancement",
+          link: "/services/editing-proofreading"
+        }
       ]
     },
     {
       id: 1,
       title: "Front-End Development",
-      description: "Modern, responsive web applications and user interfaces",
+      description: "Modern, responsive applications with cutting-edge technology",
       icon: Code,
-      color: "text-secondary",
-      bgColor: "bg-secondary/10",
+      color: "text-accent-teal",
+      bgColor: "bg-accent-teal/10",
+      gradientFrom: "from-accent-teal/20",
+      gradientTo: "to-accent-teal/5",
       subcategories: [
-        { name: "React.js Development", description: "Interactive and dynamic React applications" },
-        { name: "Tailwind CSS Integration", description: "Beautiful, responsive designs with Tailwind" },
-        { name: "Motion & Animation Design", description: "Engaging animations and micro-interactions" },
-        { name: "Responsive UI Design", description: "Mobile-first, cross-device compatibility" }
+        { 
+          name: "React.js Development", 
+          description: "Interactive React applications with modern best practices",
+          link: "/services/react-development"
+        },
+        { 
+          name: "Tailwind CSS Integration", 
+          description: "Beautiful, responsive designs with utility-first CSS",
+          link: "/services/tailwind-integration"
+        },
+        { 
+          name: "Motion & Animation Design", 
+          description: "Engaging animations and smooth micro-interactions",
+          link: "/services/animation-design"
+        },
+        { 
+          name: "Responsive UI Design", 
+          description: "Mobile-first, cross-device compatible interfaces",
+          link: "/services/responsive-design"
+        }
       ]
     },
     {
       id: 2,
       title: "WordPress & eCommerce",
-      description: "Complete eCommerce solutions and WordPress development",
+      description: "Complete eCommerce solutions and WordPress excellence",
       icon: ShoppingCart,
-      color: "text-accent-orange",
-      bgColor: "bg-accent-orange/10",
+      color: "text-accent-lilac",
+      bgColor: "bg-accent-lilac/10",
+      gradientFrom: "from-accent-lilac/20",
+      gradientTo: "to-accent-lilac/5",
       subcategories: [
-        { name: "WordPress Site Design", description: "Custom WordPress websites and themes" },
-        { name: "WooCommerce Integration", description: "Full-featured online stores with WooCommerce" },
-        { name: "Shopify Store Setup", description: "Professional Shopify store development" },
-        { name: "Amazon Product Listings", description: "Optimized product listings and store management" }
+        { 
+          name: "WordPress Development", 
+          description: "Custom WordPress sites with premium themes and plugins",
+          link: "/services/wordpress-development"
+        },
+        { 
+          name: "WooCommerce Setup", 
+          description: "Full-featured online stores with payment integration",
+          link: "/services/woocommerce-setup"
+        },
+        { 
+          name: "Shopify Store Creation", 
+          description: "Professional Shopify development and customization",
+          link: "/services/shopify-development"
+        },
+        { 
+          name: "Amazon Listings", 
+          description: "Optimized product listings and marketplace management",
+          link: "/services/amazon-optimization"
+        }
       ]
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
+    <section id="services" className="py-24 bg-neutral-50/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-slide-in-up">
-          <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Our Services
+        <div className="text-center mb-20 scroll-reveal animate">
+          <div className="inline-flex items-center px-6 py-3 glass-card text-primary rounded-full text-sm font-semibold mb-6">
+            <Sparkles className="h-4 w-4 mr-2" />
+            Our Premium Services
           </div>
-          <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
+          <h2 className="text-4xl lg:text-6xl font-display font-bold mb-8 text-balance">
             Comprehensive Solutions for
-            <span className="block text-primary">Every Digital Need</span>
+            <span className="block text-gradient-premium">Every Digital Need</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We offer three core service areas, each designed to deliver exceptional results 
-            and help you achieve your goals with professional excellence.
+          <p className="text-xl lg:text-2xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+            We offer three specialized service areas, each designed to deliver exceptional results 
+            and help you achieve your goals with premium quality and professional excellence.
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        {/* Service Cards Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => {
             const IconComponent = service.icon;
+            const isActive = activeService === index;
             return (
               <Card 
                 key={service.id}
-                className={`service-card cursor-pointer border-2 transition-all duration-300 animate-slide-in-up ${
-                  activeService === index 
-                    ? 'border-primary shadow-glow' 
-                    : 'border-transparent hover:border-primary/20'
+                className={`service-card-premium cursor-pointer border-0 transition-all duration-500 scroll-reveal animate ${
+                  isActive ? 'scale-105 shadow-premium' : 'hover:scale-105'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setActiveService(index)}
               >
-                <CardHeader className="text-center pb-4">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${service.bgColor} mx-auto mb-4`}>
-                    <IconComponent className={`h-8 w-8 ${service.color}`} />
+                <CardHeader className="text-center pb-6 relative">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} rounded-t-2xl`}></div>
+                  <div className="relative">
+                    <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${service.bgColor} mx-auto mb-6 shadow-medium`}>
+                      <IconComponent className={`h-10 w-10 ${service.color}`} />
+                    </div>
+                    <CardTitle className="text-2xl lg:text-3xl font-display font-bold mb-4">{service.title}</CardTitle>
+                    <CardDescription className="text-base text-neutral-600 leading-relaxed">{service.description}</CardDescription>
                   </div>
-                  <CardTitle className="text-2xl font-heading">{service.title}</CardTitle>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
+                <CardContent className="text-center relative">
                   <Button 
-                    variant={activeService === index ? "default" : "outline"}
-                    className="group"
+                    variant={isActive ? "default" : "outline"}
+                    className={`group transition-all duration-300 ${
+                      isActive ? 'btn-premium' : 'btn-outline-premium'
+                    }`}
                   >
-                    Learn More 
-                    <ChevronRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    Explore Services
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>
@@ -105,52 +165,69 @@ const Services = () => {
           })}
         </div>
 
-        {/* Detailed Subcategories */}
-        <div className="bg-background rounded-3xl p-8 lg:p-12 shadow-card">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-heading font-bold mb-6">
-                {services[activeService].title}
-              </h3>
-              <p className="text-lg text-muted-foreground mb-8">
-                {services[activeService].description}
-              </p>
+        {/* Detailed Service Breakdown */}
+        <div className="glass-card rounded-3xl p-8 lg:p-16 shadow-premium">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${services[activeService].bgColor} ${services[activeService].color}`}>
+                  Featured Service
+                </div>
+                <h3 className="text-3xl lg:text-4xl font-display font-bold text-neutral-800">
+                  {services[activeService].title}
+                </h3>
+                <p className="text-lg text-neutral-600 leading-relaxed">
+                  {services[activeService].description}
+                </p>
+              </div>
               
               <div className="space-y-6">
                 {services[activeService].subcategories.map((sub, index) => (
-                  <div key={index} className="flex items-start space-x-4 group">
-                    <div className="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1">
-                      <Check className="h-4 w-4 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
-                        {sub.name}
-                      </h4>
-                      <p className="text-muted-foreground">
-                        {sub.description}
-                      </p>
-                    </div>
+                  <div key={index} className="group cursor-pointer">
+                    <a 
+                      href={sub.link}
+                      className="flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-medium"
+                    >
+                      <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-1 ${services[activeService].bgColor}`}>
+                        <CheckCircle2 className={`h-5 w-5 ${services[activeService].color}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-semibold text-lg mb-2 group-hover:${services[activeService].color} transition-colors`}>
+                          {sub.name}
+                        </h4>
+                        <p className="text-neutral-600 leading-relaxed">
+                          {sub.description}
+                        </p>
+                      </div>
+                      <ArrowRight className={`h-5 w-5 text-neutral-400 group-hover:${services[activeService].color} group-hover:translate-x-1 transition-all flex-shrink-0 mt-1`} />
+                    </a>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8">
-                <Button className="btn-gradient">
+              <div className="pt-6">
+                <Button className="btn-premium text-lg">
                   Get Quote for {services[activeService].title}
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
 
             <div className="relative">
-              <div className={`w-full h-80 rounded-2xl ${services[activeService].bgColor} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10"></div>
-                <div className={`text-8xl ${services[activeService].color} opacity-20`}>
+              <div className={`w-full h-96 rounded-3xl bg-gradient-to-br ${services[activeService].gradientFrom} ${services[activeService].gradientTo} flex items-center justify-center relative overflow-hidden shadow-premium`}>
+                <div className="absolute inset-0 bg-mesh opacity-30"></div>
+                <div className={`relative text-8xl ${services[activeService].color} opacity-30`}>
                   {React.createElement(services[activeService].icon)}
                 </div>
-                <div className="absolute bottom-6 left-6">
-                  <div className="bg-background/90 backdrop-blur-sm rounded-lg p-4">
-                    <div className="text-2xl font-bold">{services[activeService].subcategories.length}</div>
-                    <div className="text-sm text-muted-foreground">Specialized Services</div>
+                <div className="absolute bottom-8 left-8">
+                  <div className="glass-card rounded-2xl p-6">
+                    <div className="text-3xl font-bold text-neutral-800">{services[activeService].subcategories.length}</div>
+                    <div className="text-sm text-neutral-600 font-medium">Specialized Services</div>
+                  </div>
+                </div>
+                <div className="absolute top-8 right-8">
+                  <div className={`w-12 h-12 rounded-full ${services[activeService].bgColor} flex items-center justify-center animate-pulse`}>
+                    <Sparkles className={`h-6 w-6 ${services[activeService].color}`} />
                   </div>
                 </div>
               </div>
