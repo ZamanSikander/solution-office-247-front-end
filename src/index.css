@@ -7,30 +7,30 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Deep Navy & Professional Blues */
+    /* Core Brand Colors - Emerald & Warm Professional Tones */
     --background: 0 0% 100%;
-    --foreground: 217 33% 17%;
+    --foreground: 24 9% 10%;
 
-    /* Deep Navy Primary */
-    --primary: 217 91% 19%;
+    /* Emerald Green Primary */
+    --primary: 160 84% 28%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 217 91% 35%;
-    --primary-dark: 217 91% 12%;
-    --primary-glow: 217 91% 60%;
+    --primary-light: 160 84% 45%;
+    --primary-dark: 160 84% 20%;
+    --primary-glow: 160 84% 55%;
 
-    /* Royal Blue Secondary */
-    --secondary: 221 83% 53%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-light: 221 83% 65%;
-    --secondary-dark: 221 83% 40%;
+    /* Warm Amber Secondary */
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 24 9% 10%;
+    --secondary-light: 43 96% 70%;
+    --secondary-dark: 43 96% 45%;
 
     /* Premium Accent Colors */
-    --accent-coral: 16 100% 66%;
-    --accent-coral-light: 16 100% 80%;
-    --accent-lilac: 267 57% 78%;
-    --accent-lilac-light: 267 57% 88%;
-    --accent-teal: 173 58% 39%;
-    --accent-teal-light: 173 58% 55%;
+    --accent-coral: 14 86% 65%;
+    --accent-coral-light: 14 86% 80%;
+    --accent-sage: 147 37% 65%;
+    --accent-sage-light: 147 37% 80%;
+    --accent-terracotta: 22 56% 58%;
+    --accent-terracotta-light: 22 56% 75%;
 
     /* Neutral Palette */
     --neutral-50: 220 14% 98%;
@@ -54,20 +54,20 @@
     --ring: 217 91% 60%;
 
     /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 19%), hsl(221 83% 53%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 19%) 0%, hsl(221 83% 53%) 50%, hsl(173 58% 39%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 99%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(16 100% 66%), hsl(267 57% 78%));
-    --gradient-premium: linear-gradient(135deg, hsl(217 91% 19%) 0%, hsl(221 83% 53%) 25%, hsl(173 58% 39%) 50%, hsl(16 100% 66%) 75%, hsl(267 57% 78%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 28%), hsl(43 96% 56%));
+    --gradient-hero: linear-gradient(135deg, hsl(160 84% 28%) 0%, hsl(43 96% 56%) 50%, hsl(22 56% 58%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(50 30% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(14 86% 65%), hsl(147 37% 65%));
+    --gradient-premium: linear-gradient(135deg, hsl(160 84% 28%) 0%, hsl(43 96% 56%) 25%, hsl(147 37% 65%) 50%, hsl(14 86% 65%) 75%, hsl(22 56% 58%) 100%);
     --gradient-glass: linear-gradient(145deg, hsl(0 0% 100% / 0.1), hsl(0 0% 100% / 0.05));
 
     /* Premium Shadows */
-    --shadow-premium: 0 32px 64px -12px hsl(217 91% 19% / 0.25);
-    --shadow-soft: 0 4px 20px -2px hsl(217 91% 19% / 0.08);
-    --shadow-medium: 0 8px 30px -4px hsl(217 91% 19% / 0.12);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
-    --shadow-card: 0 2px 15px -3px hsl(217 91% 19% / 0.06);
-    --shadow-glass: 0 8px 32px hsl(217 91% 19% / 0.12);
+    --shadow-premium: 0 32px 64px -12px hsl(160 84% 28% / 0.25);
+    --shadow-soft: 0 4px 20px -2px hsl(160 84% 28% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(160 84% 28% / 0.12);
+    --shadow-glow: 0 0 40px hsl(160 84% 55% / 0.3);
+    --shadow-card: 0 2px 15px -3px hsl(160 84% 28% / 0.06);
+    --shadow-glass: 0 8px 32px hsl(160 84% 28% / 0.12);
 
     --radius: 1.25rem;
 
@@ -82,20 +82,20 @@
   }
 
   .dark {
-    --background: 217 42% 12%;
-    --foreground: 220 14% 96%;
-    --card: 217 42% 12%;
-    --card-foreground: 220 14% 96%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 217 42% 12%;
-    --secondary: 221 83% 65%;
-    --secondary-foreground: 217 42% 12%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 220 9% 65%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 217 91% 60%;
-    --sidebar-background: 240 5.9% 10%;
+    --background: 24 9% 10%;
+    --foreground: 50 30% 96%;
+    --card: 24 9% 12%;
+    --card-foreground: 50 30% 96%;
+    --primary: 160 84% 55%;
+    --primary-foreground: 24 9% 10%;
+    --secondary: 43 96% 70%;
+    --secondary-foreground: 24 9% 10%;
+    --muted: 24 9% 15%;
+    --muted-foreground: 50 30% 65%;
+    --border: 24 9% 15%;
+    --input: 24 9% 15%;
+    --ring: 160 84% 55%;
+    --sidebar-background: 24 9% 8%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;

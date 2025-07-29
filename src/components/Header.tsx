@@ -85,7 +85,7 @@ const Header = () => {
                         <NavigationMenuLink
                           key={service.name}
                           href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-teal/10 hover:text-accent-teal focus:bg-accent-teal/10 focus:text-accent-teal"
+                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-sage/10 hover:text-accent-sage focus:bg-accent-sage/10 focus:text-accent-sage"
                         >
                           <div className="text-sm font-medium leading-none">{service.name}</div>
                         </NavigationMenuLink>
@@ -104,7 +104,7 @@ const Header = () => {
                         <NavigationMenuLink
                           key={service.name}
                           href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-lilac/10 hover:text-accent-lilac focus:bg-accent-lilac/10 focus:text-accent-lilac"
+                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-terracotta/10 hover:text-accent-terracotta focus:bg-accent-terracotta/10 focus:text-accent-terracotta"
                         >
                           <div className="text-sm font-medium leading-none">{service.name}</div>
                         </NavigationMenuLink>
@@ -168,7 +168,7 @@ const Header = () => {
                     <a
                       key={service.name}
                       href={service.href}
-                      className="block py-1 text-sm text-foreground hover:text-accent-teal transition-colors"
+                      className="block py-1 text-sm text-foreground hover:text-accent-sage transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}
@@ -183,7 +183,7 @@ const Header = () => {
                     <a
                       key={service.name}
                       href={service.href}
-                      className="block py-1 text-sm text-foreground hover:text-accent-lilac transition-colors"
+                      className="block py-1 text-sm text-foreground hover:text-accent-terracotta transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}

@@ -46,10 +46,10 @@ export default {
 				accent: {
 					coral: 'hsl(var(--accent-coral))',
 					'coral-light': 'hsl(var(--accent-coral-light))',
-					lilac: 'hsl(var(--accent-lilac))',
-					'lilac-light': 'hsl(var(--accent-lilac-light))',
-					teal: 'hsl(var(--accent-teal))',
-					'teal-light': 'hsl(var(--accent-teal-light))'
+					sage: 'hsl(var(--accent-sage))',
+					'sage-light': 'hsl(var(--accent-sage-light))',
+					terracotta: 'hsl(var(--accent-terracotta))',
+					'terracotta-light': 'hsl(var(--accent-terracotta-light))'
 				},
 				neutral: {
 					50: 'hsl(var(--neutral-50))',
