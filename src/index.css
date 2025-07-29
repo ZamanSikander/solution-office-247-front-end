@@ -172,7 +172,7 @@
 
   /* Service Cards */
   .service-card-premium {
-    @apply relative overflow-hidden transition-all duration-500 group;
+    @apply relative overflow-hidden transition-all duration-500;
     background: var(--gradient-card);
     box-shadow: var(--shadow-card);
     border-radius: var(--radius);
