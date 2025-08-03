@@ -27,14 +27,14 @@ const Hero = () => {
                       <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <span>Trusted by 500+ clients</span>
+                  <span className='text-yellow-400'>Trusted by 500+ clients</span>
                 </div>
               </div>
             </div>
 
             {/* Main Heading */}
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-white leading-tight text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-white leading-tight text-balance text-gradient-premium">
                 Your Premium
                 <span className="block text-gradient-premium bg-clip-text">Digital Partner</span>
                 <span className="block text-accent-coral">Available 24/7</span>
