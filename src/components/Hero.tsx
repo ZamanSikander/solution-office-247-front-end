@@ -1,51 +1,10 @@
 
 import { ArrowRight, Play, Star, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Canvas } from '@react-three/fiber';
-import { useRef, useState } from 'react';
-import * as THREE from 'three';
-
-// Interactive 3D sphere component
-const InteractiveSphere = ({ position, color, scale = 1 }: { position: [number, number, number], color: string, scale?: number }) => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const [hovered, setHovered] = useState(false);
-  
-  return (
-    <mesh
-      ref={meshRef}
-      position={position}
-      scale={hovered ? scale * 1.2 : scale}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
-      onClick={() => {
-        if (meshRef.current) {
-          meshRef.current.rotation.x += 0.5;
-          meshRef.current.rotation.y += 0.5;
-        }
-      }}
-    >
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial args={[{ color: color, transparent: true, opacity: 0.8 }]} />
-    </mesh>
-  );
-};
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero bg-mesh">
-      {/* Interactive 3D Background */}
-      <div className="absolute inset-0 opacity-30">
-        <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <InteractiveSphere position={[-4, 3, -2]} color="#ff6b35" scale={0.8} />
-          <InteractiveSphere position={[5, -2, -3]} color="#00d4aa" scale={1.2} />
-          <InteractiveSphere position={[-3, -4, -1]} color="#9b5de5" scale={0.6} />
-          <InteractiveSphere position={[4, 2, -4]} color="#f9844a" scale={1} />
-          <InteractiveSphere position={[0, 4, -5]} color="#06d6a0" scale={0.9} />
-        </Canvas>
-      </div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Content */}
