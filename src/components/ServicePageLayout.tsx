@@ -43,10 +43,10 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
               <Icon className={`h-10 w-10 ${color}`} />
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-display font-bold text-white mb-6">
+            <h1 className="text-2xl lg:text-4xl font-display font-bold text-white mb-6">
               {title}
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-md lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
               {description}
             </p>
             
@@ -55,7 +55,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                 Get Started Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button className="btn-outline-premium text-lg">
+              <Button className="text-lg">
                 Request Quote
               </Button>
             </div>
@@ -67,14 +67,14 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
       <section className="py-20 bg-neutral-50/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold text-center mb-12">
+            <h2 className="text-xl lg:text-3xl font-display font-bold text-center mb-12">
               What's Included
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-4 p-4 glass-card rounded-2xl">
                   <CheckCircle2 className={`h-6 w-6 ${color} flex-shrink-0`} />
-                  <span className="text-lg text-neutral-700">{feature}</span>
+                  <span className="text-md md:text-lg text-neutral-700">{feature}</span>
                 </div>
               ))}
             </div>
@@ -86,7 +86,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold text-center mb-12">
+            <h2 className="text-2xl lg:text-4xl font-display font-bold text-center mb-12">
               Our Process
             </h2>
             <div className="space-y-8">
@@ -96,8 +96,8 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{step.step}</h3>
-                    <p className="text-neutral-600 leading-relaxed">{step.description}</p>
+                    <h3 className="text-md md:text-xl font-semibold mb-2">{step.step}</h3>
+                    <p className="text-neutral-600 text-sm md:text-lg leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -111,7 +111,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
         <section className="py-20 bg-neutral-50/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl lg:text-4xl font-display font-bold text-center mb-12">
+              <h2 className="text-2xl lg:text-3xl font-display font-bold text-center mb-12">
                 Pricing Plans
               </h2>
               <div className="grid lg:grid-cols-3 gap-8">
@@ -119,7 +119,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                   <Card key={index} className="service-card-premium border-0">
                     <CardHeader className="text-center pb-6">
                       <CardTitle className="text-2xl font-display font-bold mb-4">{plan.plan}</CardTitle>
-                      <div className="text-4xl font-bold text-primary">{plan.price}</div>
+                      <div className="text-2xl md:text-4xl font-bold text-primary">{plan.price}</div>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       {plan.features.map((feature, idx) => (
@@ -152,7 +152,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                       <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <blockquote className="text-xl lg:text-2xl text-neutral-700 leading-relaxed mb-8">
+                  <blockquote className="text-md lg:text-2xl text-neutral-700 leading-relaxed mb-8">
                     "{testimonial.content}"
                   </blockquote>
                   <div>
@@ -170,17 +170,17 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
       <section className="py-20 bg-gradient-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6">
+            <h2 className="text-2xl lg:text-4xl font-display font-bold text-white mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-md md:text-xl text-white/90 mb-8">
               Let's discuss your project and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 rounded-2xl text-lg">
                 Start Your Project
               </Button>
-              <Button className="btn-outline-premium border-white text-white hover:bg-white hover:text-primary">
+              <Button className=" border-white text-white hover:bg-white hover:text-primary">
                 Schedule Consultation
               </Button>
             </div>

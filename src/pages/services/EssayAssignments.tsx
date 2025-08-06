@@ -6,12 +6,12 @@ import ServicePageLayout from '@/components/ServicePageLayout';
 
 const ResearchPapers = () => {
   const features = [
-    "Original research with credible academic sources",
+    "Custom-written essays and assignments for all subjects and academic levels",
+    "Well-researched content using credible academic sources",
     "Proper citation in APA, MLA, Harvard, or Chicago style",
-    "In-depth analysis and critical thinking",
-    "Plagiarism-free content with originality report",
-    "Professional formatting and structure",
-    "Unlimited revisions until satisfied",
+    "100% plagiarism-free content with originality report",
+    "Clear structure with introduction, body, and conclusion",
+    "Unlimited revisions until satisfaction",
     "24/7 customer support",
     "On-time delivery guaranteed"
   ];
@@ -19,28 +19,28 @@ const ResearchPapers = () => {
   const process = [
     {
       step: "Research & Planning",
-      description: "We begin by understanding your research requirements, gathering credible sources, and creating a comprehensive outline for your paper."
+      description: "We understand your assignment brief, gather relevant sources, and prepare a solid outline that aligns with your academic goals."
     },
     {
       step: "Writing & Development",
-      description: "Our expert writers craft your research paper with original content, proper citations, and academic rigor while maintaining your voice."
+      description: "Our academic writers create original content with strong arguments, critical analysis, and proper referencing in your preferred style."
     },
     {
       step: "Review & Quality Check",
-      description: "Multiple rounds of editing, proofreading, and plagiarism checking ensure your paper meets the highest academic standards."
+      description: "We thoroughly proofread, edit, and run plagiarism checks to ensure your essay or assignment meets academic standards."
     },
     {
       step: "Delivery & Support",
-      description: "We deliver your completed research paper on time and provide ongoing support for any revisions or questions you may have."
+      description: "We deliver on time and stay available for revisions or clarification to ensure you’re 100% satisfied."
     }
   ];
 
   const pricing = [
     {
       plan: "Standard",
-      price: "$15/page",
+      price: "$12/page",
       features: [
-        "7-day delivery",
+        "5-day delivery",
         "Bachelor level writing",
         "Basic research & citations",
         "2 free revisions",
@@ -50,12 +50,12 @@ const ResearchPapers = () => {
     },
     {
       plan: "Premium",
-      price: "$25/page",
+      price: "$20/page",
       features: [
-        "5-day delivery",
+        "3-day delivery",
         "Master level writing",
         "Advanced research & analysis",
-        "5 free revisions",
+        "4 free revisions",
         "Plagiarism report",
         "Progressive delivery",
         "Priority support"
@@ -63,9 +63,9 @@ const ResearchPapers = () => {
     },
     {
       plan: "Ultimate",
-      price: "$35/page",
+      price: "$30/page",
       features: [
-        "3-day delivery",
+        "2-day delivery",
         "PhD level writing",
         "Extensive research & citations",
         "Unlimited revisions",
@@ -87,8 +87,8 @@ const ResearchPapers = () => {
     <div>
       <Header />
       <ServicePageLayout
-        title="Research Papers"
-        description="Professional thesis and dissertation writing services to help you craft well-researched, properly structured, and academically sound papers that meet university standards."
+        title="Essay & Assignment Writing"
+        description="High-quality essay and assignment writing services tailored to meet your academic requirements with proper research, structure, and originality."
         icon={BookOpen}
         color="text-accent-coral"
         bgColor="bg-accent-coral/10"

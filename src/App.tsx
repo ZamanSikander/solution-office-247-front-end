@@ -7,7 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ResearchPapers from "./pages/services/ResearchPapers";
+import ThesisDissertation from "./pages/services/ThesisDissertation";
 import ReactDevelopment from "./pages/services/ReactDevelopment";
+import EssayAssignments from "./pages/services/EssayAssignments";
+import EditingProofreading from "./pages/services/EditingProofreading"
 
 const queryClient = new QueryClient();
 
@@ -22,7 +25,9 @@ const App = () => (
           
           {/* Academic Writing Services */}
           <Route path="/services/research-papers" element={<ResearchPapers />} />
-          
+          <Route path="/services/thesis-dissertation" element={<ThesisDissertation/>} />
+          <Route path="/services/essay-assignments" element={<EssayAssignments/>}/>
+          <Route path="/services/editing-proofreading" element={<EditingProofreading/>}/>
           {/* Development Services */}
           <Route path="/services/react-development" element={<ReactDevelopment />} />
           

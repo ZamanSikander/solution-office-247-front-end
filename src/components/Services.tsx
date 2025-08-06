@@ -31,12 +31,12 @@ const Services = () => {
         { 
           name: "Thesis & Dissertations", 
           description: "Comprehensive graduate-level academic support",
-          link: "/services/thesis-dissertations"
+          link: "/services/thesis-dissertation"
         },
         { 
           name: "Essays & Assignments", 
           description: "High-quality essays with original content and analysis",
-          link: "/services/essays-assignments"
+          link: "/services/essay-assignments"
         },
         { 
           name: "Editing & Proofreading", 

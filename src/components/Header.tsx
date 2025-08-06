@@ -18,8 +18,8 @@ const Header = () => {
 
   const academicServices = [
     { name: 'Research Papers', href: '/services/research-papers' },
-    { name: 'Thesis & Dissertations', href: '/services/thesis-dissertations' },
-    { name: 'Essays & Assignments', href: '/services/essays-assignments' },
+    { name: 'Thesis & Dissertations', href: '/services/thesis-dissertation' },
+    { name: 'Essays & Assignments', href: '/services/essay-assignments' },
     { name: 'Editing & Proofreading', href: '/services/editing-proofreading' },
   ];
 
@@ -66,7 +66,7 @@ const Header = () => {
                     Academic Writing
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-80 gap-3 p-6">
+                    <div className="grid w-80 gap-3 p-6 bg-white">
                       {academicServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
@@ -85,7 +85,7 @@ const Header = () => {
                     Development
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-80 gap-3 p-6">
+                    <div className="grid w-80 gap-3 p-6 bg-white">
                       {developmentServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
@@ -104,7 +104,7 @@ const Header = () => {
                     eCommerce
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-80 gap-3 p-6">
+                    <div className="grid w-80 gap-3 p-6 bg-white">
                       {ecommerceServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
