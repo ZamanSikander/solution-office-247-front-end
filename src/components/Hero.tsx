@@ -25,34 +25,32 @@ const Hero = () => {
 
             {/* Main Heading */}
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-white leading-tight text-balance text-gradient-premium">
-                Your Premium
-                <span className="block text-gradient-premium bg-clip-text">Digital Partner</span>
-                <span className="block text-accent-coral">Available 24/7</span>
+              <h1 className="text-2xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight  text-gradient-premium">
+              Powering Your Ideas with Words, Code & Commerce
               </h1>
-              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                From academic excellence to cutting-edge development and eCommerce solutions. 
-                We deliver exceptional results with premium quality, every time.
+              <p className="text-sm lg:text-xl text-gray-900/70 leading-relaxed max-w-3xl mx-auto">
+              Expert academic writing, cutting-edge front-end development, and comprehensive eCommerce solutions.
+              <span className='hidden sm:inline'> Your success is our mission.</span>
               </p>
             </div>
 
             {/* Key Benefits */}
             <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
-              <div className="flex items-center space-x-2 text-white/90">
-                <CheckCircle className="h-5 w-5 text-accent-teal" />
-                <span className="text-sm font-medium">24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2 text-white/90">
-                <CheckCircle className="h-5 w-5 text-accent-coral" />
-                <span className="text-sm font-medium">Premium Quality</span>
-              </div>
-              <div className="flex items-center space-x-2 text-white/90">
+              <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-accent-lilac" />
-                <span className="text-sm font-medium">Expert Team</span>
+                <span className="text-sm font-medium text-gradient-premium">24/7 Support</span>
               </div>
-              <div className="flex items-center space-x-2 text-white/90">
-                <CheckCircle className="h-5 w-5 text-secondary-light" />
-                <span className="text-sm font-medium">Fast Delivery</span>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5 text-accent-lilac" />
+                <span className="text-sm font-medium text-gradient-premium">Ultra-Premium</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5 text-accent-lilac" />
+                <span className="text-sm font-medium text-gradient-premium">Expert Team</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5 text-accent-lilac" />
+                <span className="text-sm font-medium text-gradient-premium">Fast Delivery</span>
               </div>
             </div>
 
@@ -62,36 +60,23 @@ const Hero = () => {
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button className="btn-outline-premium text-lg group">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
-              </Button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-white">500+</div>
-                <div className="text-white/80 text-sm font-medium">Projects Completed</div>
+                <div className="text-sm md:text-3xl lg:text-4xl text-gray-900/70">500+</div>
+                <div className=" text-sm font-medium text-gradient-premium">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-white">98%</div>
-                <div className="text-white/80 text-sm font-medium">Success Rate</div>
+                <div className="text-sm md:text-3xl text-gray-900/70 lg:text-4xl">98%</div>
+                <div className=" text-sm text-gradient-premium font-medium">Success Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-white">24/7</div>
-                <div className="text-white/80 text-sm font-medium">Availability</div>
+                <div className="text-sm md:text-3xl lg:text-4xl text-gray-900/70 ">24/7</div>
+                <div className="text-sm text-gradient-premium font-medium">Availability</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </div>

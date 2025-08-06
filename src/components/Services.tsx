@@ -1,12 +1,17 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BookOpen, Code, ShoppingCart, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0);
-
+  const detailRef = useRef(null);
+  useEffect(() => {
+    if (detailRef.current) {
+      detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [activeService]);
   const services = [
     {
       id: 0,
@@ -115,11 +120,11 @@ const Services = () => {
             <Sparkles className="h-4 w-4 mr-2" />
             Our Premium Services
           </div>
-          <h2 className="text-4xl lg:text-6xl font-display font-bold mb-8 text-balance">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-display font-bold mb-8 text-balance">
             Comprehensive Solutions for
-            <span className="block text-gradient-premium">Every Digital Need</span>
+            <span className="block m-1 text-gradient-premium">Every Digital Need</span>
           </h2>
-          <p className="text-xl lg:text-2xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-md lg:text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
             We offer three specialized service areas, each designed to deliver exceptional results 
             and help you achieve your goals with premium quality and professional excellence.
           </p>
@@ -166,17 +171,20 @@ const Services = () => {
         </div>
 
         {/* Detailed Service Breakdown */}
-        <div className="glass-card rounded-3xl p-8 lg:p-16 shadow-premium">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="glass-card rounded-3xl p-2 lg:p-16 shadow-premium"
+        ref={detailRef}
+        >
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${services[activeService].bgColor} ${services[activeService].color}`}>
                   Featured Service
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-display font-bold text-neutral-800">
+                <h3 className="text-xl  lg:text-4xl font-display font-bold text-neutral-800">
                   {services[activeService].title}
                 </h3>
-                <p className="text-lg text-neutral-600 leading-relaxed">
+                <p className="text-sm lg:text-lg text-neutral-600 leading-relaxed">
                   {services[activeService].description}
                 </p>
               </div>
@@ -186,7 +194,7 @@ const Services = () => {
                   <div key={index} className="group cursor-pointer">
                     <a 
                       href={sub.link}
-                      className="flex items-start space-x-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-medium"
+                      className="flex items-start space-x-2 p-1 lg:p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-medium"
                     >
                       <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-1 ${services[activeService].bgColor}`}>
                         <CheckCircle2 className={`h-5 w-5 ${services[activeService].color}`} />
@@ -195,7 +203,7 @@ const Services = () => {
                         <h4 className={`font-semibold text-lg mb-2 group-hover:${services[activeService].color} transition-colors`}>
                           {sub.name}
                         </h4>
-                        <p className="text-neutral-600 leading-relaxed">
+                        <p className="text-neutral-600 text-sm leading-relaxed">
                           {sub.description}
                         </p>
                       </div>
@@ -206,8 +214,8 @@ const Services = () => {
               </div>
 
               <div className="pt-6">
-                <Button className="btn-premium text-lg">
-                  Get Quote for {services[activeService].title}
+                <Button className="btn-premium text-sm lg:text-lg">
+                  Request a Quote 
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>

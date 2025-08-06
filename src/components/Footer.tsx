@@ -30,11 +30,11 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-7">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="text-2xl font-heading font-bold mb-4">
-              Office 24/7
+              Solution Office 24/7
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
               Your trusted partner for academic writing, front-end development, 
@@ -45,11 +45,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-accent-orange" />
-                <span className="text-sm">hello@office247.com</span>
+                <span className="text-sm">info@solutionoffice247.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-accent-orange" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+92-323-6180902</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-accent-orange" />
@@ -99,13 +99,13 @@ const Footer = () => {
               Subscribe to our newsletter for updates and tips.
             </p>
             
-            <div className="flex space-x-1 mb-6">
+            <div className="flex mb-6">
               <input
                 type="email"
                 placeholder="Your email"
                 className="flex-1 px-3 py-2 rounded-l-md bg-background/10 border border-background/20 text-primary-foreground placeholder-primary-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-accent-orange"
               />
-              <button className="px-4 py-2 bg-accent-orange hover:bg-accent-orange-light transition-colors rounded-r-md text-white text-sm font-medium">
+              <button className="px-2 lg:px-4 py-2 bg-accent-orange hover:bg-accent-orange-light transition-colors rounded-r-md text-white text-sm font-medium">
                 Subscribe
               </button>
             </div>

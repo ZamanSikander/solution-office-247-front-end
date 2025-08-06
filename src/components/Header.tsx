@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
-
+import logo6 from '@/assets/logo6.png'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,9 +45,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-display font-bold text-gradient-premium">
+          <img
+    src={logo6}
+    alt="Solution Office Logo"
+    className='w-48 sm:w-56 md:w-64'
+  />
+          {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
               Solution Office 24/7
-            </div>
+            </div> */}
           </div>
 
           {/* Desktop Navigation */}
@@ -57,7 +62,7 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link px-4 py-2 bg-transparent hover:bg-transparent">
+                  <NavigationMenuTrigger className="nav-link px-2 py-2 bg-transparent hover:bg-transparent">
                     Academic Writing
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -142,7 +147,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="glass-card px-2 pt-2 pb-3 space-y-1 mt-2 rounded-2xl">
+            <div className="glass-card px-2 pb-3 rounded-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
               <a href="/" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Home
               </a>

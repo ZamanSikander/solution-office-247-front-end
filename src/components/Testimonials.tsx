@@ -75,11 +75,11 @@ const Testimonials = () => {
           <div className="inline-block px-4 py-2 bg-accent-orange/10 text-accent-orange rounded-full text-sm font-medium mb-4">
             Client Testimonials
           </div>
-          <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
             What Our Clients
             <span className="block text-accent-orange">Say About Us</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-md lg:text-xl text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say 
             about their experience working with Office 24/7.
           </p>
@@ -110,20 +110,16 @@ const Testimonials = () => {
                         </div>
 
                         {/* Content */}
-                        <blockquote className="text-xl lg:text-2xl text-foreground leading-relaxed mb-8 italic">
+                        <blockquote className="text-sm lg:text-2xl text-foreground leading-relaxed mb-8 italic">
                           "{testimonial.content}"
                         </blockquote>
 
                         {/* Author */}
                         <div className="flex items-center justify-center space-x-4">
-                          <img 
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                            className="w-16 h-16 rounded-full object-cover"
-                          />
+                         
                           <div className="text-left">
-                            <div className="font-semibold text-lg">{testimonial.name}</div>
-                            <div className="text-muted-foreground">{testimonial.role}</div>
+                            <div className="font-semibold text-md">{testimonial.name}</div>
+                            <div className="text-muted-foreground text-sm">{testimonial.role}</div>
                             <div className="text-sm text-primary font-medium">{testimonial.service}</div>
                           </div>
                         </div>
@@ -172,7 +168,7 @@ const Testimonials = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <h3 className="text-2xl font-heading font-semibold mb-4">
+          <h3 className="text-xl md:text-2xl font-heading font-semibold mb-4">
             Ready to Join Our Happy Clients?
           </h3>
           <p className="text-muted-foreground mb-8">

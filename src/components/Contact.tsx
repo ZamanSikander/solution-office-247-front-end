@@ -36,13 +36,13 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@office247.com",
+      content: "info@solutionoffice247.com",
       description: "Send us an email anytime"
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
+      content: "+92-323-6180902",
       description: "Available 24/7 for urgent requests"
     },
     {
@@ -67,11 +67,11 @@ const Contact = () => {
           <div className="inline-block px-4 py-2 bg-accent-lilac/10 text-accent-lilac rounded-full text-sm font-medium mb-4">
             Get In Touch
           </div>
-          <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-6">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xlfont-heading font-bold mb-6">
             Ready to Start Your
             <span className="block text-accent-lilac">Next Project?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-md lg:text-xl  text-muted-foreground max-w-3xl mx-auto">
             Have a question or ready to get started? We're here to help 24/7. 
             Reach out to us and let's discuss how we can bring your vision to life.
           </p>
@@ -82,7 +82,7 @@ const Contact = () => {
           <div className="animate-slide-in-up">
             <Card className="border-0 shadow-card">
               <CardHeader>
-                <CardTitle className="text-2xl font-heading">Send us a message</CardTitle>
+                <CardTitle className="text-lg md:text-xl font-heading">Send us a message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">

@@ -69,11 +69,11 @@ const WhyChooseUs = () => {
             <Sparkles className="h-4 w-4 mr-2" />
             Why Choose Solution Office 24/7
           </div>
-          <h2 className="text-4xl lg:text-6xl font-display font-bold mb-8 text-balance">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xlfont-display font-bold mb-8 text-balance">
             Built for Excellence,
             <span className="block text-gradient-premium">Delivered with Care</span>
           </h2>
-          <p className="text-xl lg:text-2xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-md lg:text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
             We combine expertise, reliability, and innovation to deliver exceptional results 
             that exceed expectations and drive your success forward every single time.
           </p>
@@ -110,25 +110,26 @@ const WhyChooseUs = () => {
 
         {/* Premium Stats Section */}
         <div className="glass-card rounded-3xl p-8 lg:p-16 shadow-premium bg-gradient-to-br from-primary/5 to-secondary/5">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="scroll-reveal animate">
-              <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">500+</div>
-              <div className="text-neutral-600 font-medium text-lg">Projects Completed</div>
-            </div>
-            <div className="scroll-reveal animate" style={{ animationDelay: '0.1s' }}>
-              <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">98%</div>
-              <div className="text-neutral-600 font-medium text-lg">Client Satisfaction</div>
-            </div>
-            <div className="scroll-reveal animate" style={{ animationDelay: '0.2s' }}>
-              <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">24/7</div>
-              <div className="text-neutral-600 font-medium text-lg">Support Available</div>
-            </div>
-            <div className="scroll-reveal animate" style={{ animationDelay: '0.3s' }}>
-              <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">5+</div>
-              <div className="text-neutral-600 font-medium text-lg">Years Experience</div>
-            </div>
-          </div>
-        </div>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
+    <div className="scroll-reveal animate">
+      <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">500+</div>
+      <div className="text-neutral-600 font-medium text-sm lg:text-lg">Projects Completed</div>
+    </div>
+    <div className="scroll-reveal animate" style={{ animationDelay: '0.1s' }}>
+      <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">98%</div>
+      <div className="text-neutral-600 font-medium text-sm lg:text-lg">Client Satisfaction</div>
+    </div>
+    <div className="scroll-reveal animate" style={{ animationDelay: '0.2s' }}>
+      <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">24/7</div>
+      <div className="text-neutral-600 font-medium text-sm lg:text-lg">Support Available</div>
+    </div>
+    <div className="scroll-reveal animate" style={{ animationDelay: '0.3s' }}>
+      <div className="text-4xl lg:text-6xl font-display font-bold mb-3 text-gradient-premium">5+</div>
+      <div className="text-neutral-600 font-medium text-sm lg:text-lg">Years Experience</div>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );
