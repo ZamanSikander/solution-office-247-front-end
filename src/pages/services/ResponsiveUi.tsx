@@ -6,32 +6,32 @@ import ServicePageLayout from '@/components/ServicePageLayout';
 
 const ReactDevelopment = () => {
   const features = [
-    "Modern React 18+ with latest features",
-    "TypeScript for type-safe development",
-    "Responsive design with Tailwind CSS",
-    "State management with Redux/Zustand",
-    "API integration and data fetching",
-    "Component testing with Jest & RTL",
-    "Performance optimization",
-    "SEO-friendly implementation"
+    "Mobile-first and responsive layout",
+    "Tailwind CSS for fast, scalable styling",
+    "Pixel-perfect design implementation",
+    "Figma to code conversion",
+    "Accessible (a11y) interfaces",
+    "Cross-browser compatibility",
+    "Reusable UI components",
+    "Design system integration"
   ];
 
   const process = [
     {
-      step: "Requirements Analysis",
-      description: "We thoroughly analyze your project requirements, target audience, and technical specifications to create a detailed development plan."
+      step: "Design Audit & Planning",
+      description: "We assess your brand identity, style guide, and goals to define a clear UI strategy for your target audience."
     },
     {
-      step: "Design & Architecture",
-      description: "Our team designs the application architecture, component structure, and creates wireframes or prototypes for your approval."
+      step: "Wireframing & Prototyping",
+      description: "We craft low/high-fidelity wireframes and interactive prototypes using Figma or Adobe XD to finalize the structure and flow."
     },
     {
-      step: "Development & Testing",
-      description: "We build your React application using modern best practices, conduct thorough testing, and ensure cross-browser compatibility."
+      step: "UI Development",
+      description: "We implement responsive UIs using semantic HTML and Tailwind CSS, ensuring both design fidelity and performance."
     },
     {
-      step: "Deployment & Support",
-      description: "We deploy your application to your preferred hosting platform and provide ongoing maintenance and support as needed."
+      step: "Testing & Delivery",
+      description: "We test the UI across all devices and browsers, then deliver pixel-perfect, production-ready code."
     }
   ];
 
@@ -41,6 +41,7 @@ const ReactDevelopment = () => {
       price: "$300",
       features: [
         "Single page application",
+        "Upto 3 responsive screens",
         "5-7 components",
         "Basic responsive design",
         "API integration",
@@ -53,6 +54,7 @@ const ReactDevelopment = () => {
       price: "$600",
       features: [
         "6-7 pages application",
+        "Upto 5-6 responsive screens",
         "Advanced responsive design",
         "State management",
         "Reuseable components",
@@ -85,8 +87,8 @@ const ReactDevelopment = () => {
     <div>
       <Header />
       <ServicePageLayout
-        title="React.js Development"
-        description="Build modern, interactive web applications with React.js. We create scalable, maintainable, and performance-optimized applications using the latest React features and best practices."
+        title="📱 Responsive UI Design"
+        description="Design beautiful, responsive, and user-friendly interfaces for all devices. We convert your ideas or Figma designs into clean, scalable UI using Tailwind CSS and modern front-end best practices."
         icon={Code}
         color="text-accent-teal"
         bgColor="bg-accent-teal/10"

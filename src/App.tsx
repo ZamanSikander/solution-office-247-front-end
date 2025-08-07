@@ -10,7 +10,10 @@ import ResearchPapers from "./pages/services/ResearchPapers";
 import ThesisDissertation from "./pages/services/ThesisDissertation";
 import ReactDevelopment from "./pages/services/ReactDevelopment";
 import EssayAssignments from "./pages/services/EssayAssignments";
-import EditingProofreading from "./pages/services/EditingProofreading"
+import EditingProofreading from "./pages/services/EditingProofreading";
+import ResponsiveUi from "./pages/services/ResponsiveUi";
+import AnimationDesign from "./pages/services/AnimationDesign";
+import WordPressDevelopment from "./pages/services/WordPressDevelopment"
 
 const queryClient = new QueryClient();
 
@@ -30,7 +33,9 @@ const App = () => (
           <Route path="/services/editing-proofreading" element={<EditingProofreading/>}/>
           {/* Development Services */}
           <Route path="/services/react-development" element={<ReactDevelopment />} />
-          
+          <Route path="/services/responsive-design" element={<ResponsiveUi />} />
+          <Route path="/services/animation-design" element={<AnimationDesign />} />
+          <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

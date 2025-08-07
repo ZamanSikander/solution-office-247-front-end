@@ -25,16 +25,17 @@ const Header = () => {
 
   const developmentServices = [
     { name: 'React.js Development', href: '/services/react-development' },
-    { name: 'Tailwind CSS Integration', href: '/services/tailwind-integration' },
-    { name: 'Motion & Animation Design', href: '/services/animation-design' },
     { name: 'Responsive UI Design', href: '/services/responsive-design' },
+    { name: 'Motion & Animation Design', href: '/services/animation-design' },
+    { name: 'WordPress Development', href: '/services/wordpress-development' },
   ];
 
   const ecommerceServices = [
-    { name: 'WordPress Development', href: '/services/wordpress-development' },
-    { name: 'WooCommerce Setup', href: '/services/woocommerce-setup' },
-    { name: 'Shopify Store Creation', href: '/services/shopify-development' },
-    { name: 'Amazon Listings', href: '/services/amazon-optimization' },
+    { name: 'Ebay Services', href: '/services/ebay-services' },
+    { name: 'Walmart Servicese', href: '/services/walmart-services' },
+    { name: 'Tiktok Services', href: '/services/tiktok-services' },
+    { name: 'Amazon Services', href: '/services/amazon-services' },
+    { name: 'Shopify Services', href: '/services/shopify-services' }
   ];
 
   return (

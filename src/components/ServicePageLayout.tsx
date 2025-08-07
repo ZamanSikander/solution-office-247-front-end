@@ -10,6 +10,7 @@ interface ServicePageProps {
   icon: React.ComponentType<{ className?: string }>;
   color: string;
   bgColor: string;
+  HbgColor: string;
   features: string[];
   process: { step: string; description: string }[];
   pricing?: { plan: string; price: string; features: string[] }[];
@@ -22,6 +23,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
   icon: Icon,
   color,
   bgColor,
+  HbgColor,
   features,
   process,
   pricing,
@@ -30,7 +32,7 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-hero overflow-hidden">
+      <section className={`relative pt-32 pb-20 ${HbgColor} overflow-hidden`}>
         <div className="absolute inset-0 bg-mesh opacity-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
