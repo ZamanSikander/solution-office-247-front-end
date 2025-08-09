@@ -1,36 +1,8 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    service: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: '', email: '', service: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
   const contactInfo = [
     {
@@ -67,7 +39,7 @@ const Contact = () => {
           <div className="inline-block px-4 py-2 bg-accent-lilac/10 text-accent-lilac rounded-full text-sm font-medium mb-4">
             Get In Touch
           </div>
-          <h2 className="text-2xl sm:text-5xl lg:text-6xlfont-heading font-bold mb-6">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
             Ready to Start Your
             <span className="block text-accent-lilac">Next Project?</span>
           </h2>
@@ -75,97 +47,15 @@ const Contact = () => {
             Have a question or ready to get started? We're here to help 24/7. 
             Reach out to us and let's discuss how we can bring your vision to life.
           </p>
+          <div className="mt-8">
+            <a href="/pages/contact">
+              <Button className="btn-gradient px-6 py-6 text-base">Get a quote</Button>
+            </a>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="animate-slide-in-up">
-            <Card className="border-0 shadow-card">
-              <CardHeader>
-                <CardTitle className="text-lg md:text-xl font-heading">Send us a message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Your Name
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email Address
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium mb-2">
-                      Service Interested In
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="academic-writing">Academic Writing</option>
-                      <option value="frontend-development">Front-End Development</option>
-                      <option value="wordpress-ecommerce">WordPress & eCommerce</option>
-                      <option value="consultation">General Consultation</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Project Details
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full"
-                      placeholder="Tell us about your project requirements..."
-                    />
-                  </div>
-
-                  <Button type="submit" className="btn-gradient w-full group">
-                    Send Message
-                    <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Information */}
-          <div className="animate-slide-in-up animate-delay-200">
+        {/* Contact Information */}
+        <div className="animate-slide-in-up animate-delay-200 mt-12">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
@@ -202,7 +92,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
