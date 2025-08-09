@@ -122,7 +122,7 @@ const Header = () => {
             </NavigationMenu>
 
             <a href="/about" className="nav-link px-4 py-2">About</a>
-            <a href="/contact" className="nav-link px-4 py-2">Contact</a>
+            <a href="/pages/contact" className="nav-link px-4 py-2">Contact</a>
           </nav>
 
           {/* CTA Button */}
@@ -200,7 +200,7 @@ const Header = () => {
               <a href="/about" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 About
               </a>
-              <a href="/contact" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <a href="/pages/contact" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </a>
               <div className="px-3 py-2">
