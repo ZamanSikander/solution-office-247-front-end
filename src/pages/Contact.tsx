@@ -76,7 +76,7 @@ const ContactPage = () => {
               Get in Touch
             </h1>
             <p className="text-md md:text-lg text-white/90">
-              Have a question or ready to get started? Were here to help 24/7.
+              Have a question or ready to get started? We are here to help 24/7.
             </p>
           </div>
         </div>
