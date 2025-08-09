@@ -15,7 +15,6 @@ import EditingProofreading from "./pages/services/EditingProofreading";
 import ResponsiveUi from "./pages/services/ResponsiveUi";
 import AnimationDesign from "./pages/services/AnimationDesign";
 import WordPressDevelopment from "./pages/services/WordPressDevelopment";
-import Contact from "./components/Contact";
 
 const queryClient = new QueryClient();
 
@@ -40,7 +39,7 @@ const App = () => (
           <Route path="/services/animation-design" element={<AnimationDesign />} />
           <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/pages/contact" element={<Contact/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
