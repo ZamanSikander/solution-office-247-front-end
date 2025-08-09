@@ -46,11 +46,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-          <img
-    src={logo6}
-    alt="Solution Office Logo"
-    className='w-48 sm:w-56 md:w-64'
-  />
+          <a href="/">
+            <img
+              src={logo6}
+              alt="Solution Office Logo"
+              className='w-48 sm:w-56 md:w-64'
+            />
+          </a>
           {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
               Solution Office 24/7
             </div> */}
