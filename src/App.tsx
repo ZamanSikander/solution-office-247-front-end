@@ -16,7 +16,7 @@ import EditingProofreading from "./pages/services/EditingProofreading";
 import ResponsiveUi from "./pages/services/ResponsiveUi";
 import AnimationDesign from "./pages/services/AnimationDesign";
 import WordPressDevelopment from "./pages/services/WordPressDevelopment";
-
+import EbayServices from "./pages/services/EbayServices"
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -40,6 +40,10 @@ const App = () => (
           <Route path="/services/responsive-design" element={<ResponsiveUi />} />
           <Route path="/services/animation-design" element={<AnimationDesign />} />
           <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
+
+          {/* {Ecommerce services} */}
+          <Route path="/services/ebay-services" element={<EbayServices />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/pages/contact" element={<Contact/>} />
           <Route path="*" element={<NotFound />} />
