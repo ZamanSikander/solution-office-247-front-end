@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 import ResearchPapers from "./pages/services/ResearchPapers";
 import ThesisDissertation from "./pages/services/ThesisDissertation";
 import ReactDevelopment from "./pages/services/ReactDevelopment";
@@ -15,7 +16,7 @@ import EditingProofreading from "./pages/services/EditingProofreading";
 import ResponsiveUi from "./pages/services/ResponsiveUi";
 import AnimationDesign from "./pages/services/AnimationDesign";
 import WordPressDevelopment from "./pages/services/WordPressDevelopment";
-
+import EbayServices from "./pages/services/EbayServices"
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/pages/contact" element={<Contact />} />
           
           {/* Academic Writing Services */}
@@ -38,6 +40,10 @@ const App = () => (
           <Route path="/services/responsive-design" element={<ResponsiveUi />} />
           <Route path="/services/animation-design" element={<AnimationDesign />} />
           <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
+
+          {/* {Ecommerce services} */}
+          <Route path="/services/ebay-services" element={<EbayServices />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/pages/contact" element={<Contact/>} />
           <Route path="*" element={<NotFound />} />
