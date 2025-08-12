@@ -64,17 +64,17 @@ const Header = () => {
             
             <NavigationMenu>
               <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link px-2 py-2 bg-transparent hover:bg-transparent">
-                    Academic Writing
+              <NavigationMenuItem>
+                  <NavigationMenuTrigger className="nav-link px-4 py-2 bg-transparent hover:bg-transparent">
+                    eCommerce
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-80 gap-3 p-6 bg-white">
-                      {academicServices.map((service) => (
+                      {ecommerceServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
                           href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-coral/10 hover:text-accent-coral focus:bg-accent-coral/10 focus:text-accent-coral"
+                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-terracotta/10 hover:text-accent-terracotta focus:bg-accent-terracotta/10 focus:text-accent-terracotta"
                         >
                           <div className="text-sm font-medium leading-none">{service.name}</div>
                         </NavigationMenuLink>
@@ -82,6 +82,7 @@ const Header = () => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+               
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="nav-link px-4 py-2 bg-transparent hover:bg-transparent">
@@ -101,18 +102,17 @@ const Header = () => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link px-4 py-2 bg-transparent hover:bg-transparent">
-                    eCommerce
+                  <NavigationMenuTrigger className="nav-link px-2 py-2 bg-transparent hover:bg-transparent">
+                    Academic Writing
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-80 gap-3 p-6 bg-white">
-                      {ecommerceServices.map((service) => (
+                      {academicServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
                           href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-terracotta/10 hover:text-accent-terracotta focus:bg-accent-terracotta/10 focus:text-accent-terracotta"
+                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-coral/10 hover:text-accent-coral focus:bg-accent-coral/10 focus:text-accent-coral"
                         >
                           <div className="text-sm font-medium leading-none">{service.name}</div>
                         </NavigationMenuLink>
@@ -155,13 +155,13 @@ const Header = () => {
                 Home
               </a>
               <div className="px-3 py-2">
-                <div className="text-sm font-medium text-muted-foreground mb-2">Academic Writing</div>
+                <div className="text-sm font-medium text-muted-foreground mb-2">eCommerce</div>
                 <div className="pl-4 space-y-1">
-                  {academicServices.map((service) => (
+                  {ecommerceServices.map((service) => (
                     <a
                       key={service.name}
                       href={service.href}
-                      className="block py-1 text-sm text-foreground hover:text-accent-coral transition-colors"
+                      className="block py-1 text-sm text-foreground hover:text-accent-terracotta transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}
@@ -185,13 +185,13 @@ const Header = () => {
                 </div>
               </div>
               <div className="px-3 py-2">
-                <div className="text-sm font-medium text-muted-foreground mb-2">eCommerce</div>
+                <div className="text-sm font-medium text-muted-foreground mb-2">Academic Writing</div>
                 <div className="pl-4 space-y-1">
-                  {ecommerceServices.map((service) => (
+                  {academicServices.map((service) => (
                     <a
                       key={service.name}
                       href={service.href}
-                      className="block py-1 text-sm text-foreground hover:text-accent-terracotta transition-colors"
+                      className="block py-1 text-sm text-foreground hover:text-accent-coral transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}
