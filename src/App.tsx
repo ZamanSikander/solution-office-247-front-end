@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 import ResearchPapers from "./pages/services/ResearchPapers";
 import ThesisDissertation from "./pages/services/ThesisDissertation";
 import ReactDevelopment from "./pages/services/ReactDevelopment";
@@ -26,6 +27,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
           <Route path="/pages/contact" element={<Contact />} />
           
           {/* Academic Writing Services */}
