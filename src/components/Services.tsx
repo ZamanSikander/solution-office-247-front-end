@@ -61,9 +61,9 @@ const Services = () => {
           link: "/services/react-development"
         },
         { 
-          name: "Tailwind CSS Integration", 
+          name: "Responsive UI Design", 
           description: "Beautiful, responsive designs with utility-first CSS",
-          link: "/services/tailwind-integration"
+          link: "/services/responsive-design"
         },
         { 
           name: "Motion & Animation Design", 
@@ -71,16 +71,16 @@ const Services = () => {
           link: "/services/animation-design"
         },
         { 
-          name: "Responsive UI Design", 
-          description: "Mobile-first, cross-device compatible interfaces",
-          link: "/services/responsive-design"
+          name: "WordPress Development", 
+          description: "Professional WordPress and WooCommerce development for fast, secure, and fully customized websites and online stores.",
+          link: "/services/wordpress-development"
         }
       ]
     },
     {
       id: 2,
-      title: "WordPress & eCommerce",
-      description: "Complete eCommerce solutions and WordPress excellence",
+      title: "eCommerce",
+      description: "Complete eCommerce solutions with excellent results",
       icon: ShoppingCart,
       color: "text-accent-lilac",
       bgColor: "bg-accent-lilac/10",
@@ -88,24 +88,29 @@ const Services = () => {
       gradientTo: "to-accent-lilac/5",
       subcategories: [
         { 
-          name: "WordPress Development", 
+          name: "Ebay Services", 
           description: "Custom WordPress sites with premium themes and plugins",
-          link: "/services/wordpress-development"
+          link: "/services/ebay-services"
         },
         { 
-          name: "WooCommerce Setup", 
+          name: "Walmart Services", 
           description: "Full-featured online stores with payment integration",
-          link: "/services/woocommerce-setup"
+          link: "/services/walmart-services"
         },
         { 
-          name: "Shopify Store Creation", 
+          name: "Tiktok Services", 
           description: "Professional Shopify development and customization",
-          link: "/services/shopify-development"
+          link: "/services/tiktok-services"
         },
         { 
-          name: "Amazon Listings", 
+          name: "Amazon Services", 
           description: "Optimized product listings and marketplace management",
-          link: "/services/amazon-optimization"
+          link: "/services/amazon-services"
+        },
+        { 
+          name: "Shopify Services", 
+          description: "Optimized product listings and marketplace management",
+          link: "/services/shopify-services"
         }
       ]
     }
