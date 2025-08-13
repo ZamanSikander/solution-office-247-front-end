@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import ResearchPapers from "./pages/services/ResearchPapers";
 import ThesisDissertation from "./pages/services/ThesisDissertation";
 import ReactDevelopment from "./pages/services/ReactDevelopment";
@@ -32,6 +34,8 @@ const AppRoutes = () => {
       <Route path="/" element={<Index />} />
       <Route path="/about" element={<About />} />
       <Route path="/pages/contact" element={<Contact />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
       
       {/* Academic Writing Services */}
       <Route path="/services/research-papers" element={<ResearchPapers />} />
