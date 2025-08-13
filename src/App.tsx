@@ -16,7 +16,11 @@ import EditingProofreading from "./pages/services/EditingProofreading";
 import ResponsiveUi from "./pages/services/ResponsiveUi";
 import AnimationDesign from "./pages/services/AnimationDesign";
 import WordPressDevelopment from "./pages/services/WordPressDevelopment";
-import EbayServices from "./pages/services/EbayServices"
+import EbayServices from "./pages/services/EbayServices";
+import WalmartServices from "./pages/services/WalmartServices";
+import TiktokServices from "./pages/services/TiktokServices";
+import AmazonServices from "./pages/services/AmazonServices";
+import ShopifyServices from "./pages/services/ShopifyServices";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,6 +47,11 @@ const App = () => (
 
           {/* {Ecommerce services} */}
           <Route path="/services/ebay-services" element={<EbayServices />} />
+          <Route path="/services/walmart-services" element={<WalmartServices />} />
+          <Route path="/services/tiktok-services" element={<TiktokServices />} />
+          <Route path="/services/amazon-services" element={<AmazonServices />} />
+
+          <Route path="/services/shopify-services" element={<ShopifyServices />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/pages/contact" element={<Contact/>} />
