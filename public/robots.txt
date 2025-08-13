@@ -12,3 +12,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+
+# Sitemap location
+Sitemap: https://solutionoffice247.com/sitemap.xml
