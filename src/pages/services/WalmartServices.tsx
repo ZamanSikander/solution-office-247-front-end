@@ -82,7 +82,7 @@ const ResearchPapers = () => {
         icon={BookOpen}
         color="text-accent-coral"
         bgColor="bg-accent-coral/10"
-        HbgColor='bg-accent-coral/60'
+        HbgColor='bg-accent-coral/80'
         features={features}
         process={process}
         pricing={pricing}
