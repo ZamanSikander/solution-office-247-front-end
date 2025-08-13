@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowLeft, CheckCircle2, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 interface ServicePageProps {
   title: string;
@@ -36,10 +37,12 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
         <div className="absolute inset-0 bg-mesh opacity-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <Button variant="ghost" className="mb-8 text-white hover:bg-white/10">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Services
-            </Button>
+            <Link to="/">
+              <Button variant="ghost" className="mb-8 text-white hover:bg-white/10">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Button>
+            </Link>
             
             <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${bgColor} mx-auto mb-8 shadow-premium`}>
               <Icon className={`h-10 w-10 ${color}`} />
