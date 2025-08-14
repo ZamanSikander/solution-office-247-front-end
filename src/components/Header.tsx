@@ -1,8 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
+import { Link } from 'react-router-dom';
 import logo6 from '@/assets/logo6.png'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,13 +48,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-          <a href="/">
+          <Link to="/">
             <img
               src={logo6}
               alt="Solution Office Logo"
               className='w-48 sm:w-56 md:w-64'
             />
-          </a>
+          </Link>
           {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
               Solution Office 24/7
             </div> */}
@@ -60,7 +62,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
-            <a href="/" className="nav-link px-4 py-2">Home</a>
+            <Link to="/" className="nav-link px-4 py-2">Home</Link>
             
             <NavigationMenu>
               <NavigationMenuList>
@@ -73,10 +75,14 @@ const Header = () => {
                       {ecommerceServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
-                          href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-terracotta/10 hover:text-accent-terracotta focus:bg-accent-terracotta/10 focus:text-accent-terracotta"
+                          asChild
                         >
-                          <div className="text-sm font-medium leading-none">{service.name}</div>
+                          <Link
+                            to={service.href}
+                            className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-terracotta/10 hover:text-accent-terracotta focus:bg-accent-terracotta/10 focus:text-accent-terracotta"
+                          >
+                            <div className="text-sm font-medium leading-none">{service.name}</div>
+                          </Link>
                         </NavigationMenuLink>
                       ))}
                     </div>
@@ -93,10 +99,14 @@ const Header = () => {
                       {developmentServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
-                          href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-sage/10 hover:text-accent-sage focus:bg-accent-sage/10 focus:text-accent-sage"
+                          asChild
                         >
-                          <div className="text-sm font-medium leading-none">{service.name}</div>
+                          <Link
+                            to={service.href}
+                            className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-sage/10 hover:text-accent-sage focus:bg-accent-sage/10 focus:text-accent-sage"
+                          >
+                            <div className="text-sm font-medium leading-none">{service.name}</div>
+                          </Link>
                         </NavigationMenuLink>
                       ))}
                     </div>
@@ -111,10 +121,14 @@ const Header = () => {
                       {academicServices.map((service) => (
                         <NavigationMenuLink
                           key={service.name}
-                          href={service.href}
-                          className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-coral/10 hover:text-accent-coral focus:bg-accent-coral/10 focus:text-accent-coral"
+                          asChild
                         >
-                          <div className="text-sm font-medium leading-none">{service.name}</div>
+                          <Link
+                            to={service.href}
+                            className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-accent-coral/10 hover:text-accent-coral focus:bg-accent-coral/10 focus:text-accent-coral"
+                          >
+                            <div className="text-sm font-medium leading-none">{service.name}</div>
+                          </Link>
                         </NavigationMenuLink>
                       ))}
                     </div>
@@ -123,15 +137,13 @@ const Header = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <a href="/about" className="nav-link px-4 py-2">About</a>
-            <a href="/pages/contact" className="nav-link px-4 py-2">Contact</a>
+            <Link to="/about" className="nav-link px-4 py-2">About</Link>
+            <Link to="/pages/contact" className="nav-link px-4 py-2">Contact</Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <Button className="btn-premium">
-              Get Started
-            </Button>
+          <HashLink smooth to="/#services" className="btn-premium p-3 m-3 text-sm">Get Started</HashLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -151,21 +163,21 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="glass-card px-2 pb-3 rounded-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
-              <a href="/" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Home
-              </a>
+              </Link>
               <div className="px-3 py-2">
                 <div className="text-sm font-medium text-muted-foreground mb-2">eCommerce</div>
                 <div className="pl-4 space-y-1">
                   {ecommerceServices.map((service) => (
-                    <a
+                    <Link
                       key={service.name}
-                      href={service.href}
+                      to={service.href}
                       className="block py-1 text-sm text-foreground hover:text-accent-terracotta transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -173,14 +185,14 @@ const Header = () => {
                 <div className="text-sm font-medium text-muted-foreground mb-2">Development</div>
                 <div className="pl-4 space-y-1">
                   {developmentServices.map((service) => (
-                    <a
+                    <Link
                       key={service.name}
-                      href={service.href}
+                      to={service.href}
                       className="block py-1 text-sm text-foreground hover:text-accent-sage transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -188,27 +200,26 @@ const Header = () => {
                 <div className="text-sm font-medium text-muted-foreground mb-2">Academic Writing</div>
                 <div className="pl-4 space-y-1">
                   {academicServices.map((service) => (
-                    <a
+                    <Link
                       key={service.name}
-                      href={service.href}
+                      to={service.href}
                       className="block py-1 text-sm text-foreground hover:text-accent-coral transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
-              <a href="/about" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/about" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 About
-              </a>
-              <a href="/pages/contact" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+              </Link>
+              <Link to="/pages/contact" className="block px-3 py-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Contact
-              </a>
+              </Link>
               <div className="px-3 py-2">
-                <Button className="btn-premium w-full" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
-                </Button>
+                
+                <HashLink smooth to="/#services" className="btn-premium p-2 text-xs w-full" onClick={() => setIsMenuOpen(false)}>Get Started</HashLink>
               </div>
             </div>
           </div>

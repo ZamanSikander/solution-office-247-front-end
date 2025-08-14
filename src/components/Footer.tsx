@@ -1,21 +1,33 @@
 import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const services = [
-    "Research Papers",
-    "Thesis Writing",
-    "React Development",
-    "WordPress Design",
-    "eCommerce Solutions",
-    "SEO Optimization"
+  const academicServices = [
+    { name: 'Research Papers', href: '/services/research-papers' },
+    { name: 'Thesis & Dissertations', href: '/services/thesis-dissertation' },
+    { name: 'Essays & Assignments', href: '/services/essay-assignments' },
+    { name: 'Editing & Proofreading', href: '/services/editing-proofreading' },
+  ];
+
+  const developmentServices = [
+    { name: 'React.js Development', href: '/services/react-development' },
+    { name: 'Responsive UI Design', href: '/services/responsive-design' },
+    { name: 'Motion & Animation Design', href: '/services/animation-design' },
+    { name: 'WordPress Development', href: '/services/wordpress-development' },
+  ];
+
+  const ecommerceServices = [
+    { name: 'Ebay Services', href: '/services/ebay-services' },
+    { name: 'Walmart Services', href: '/services/walmart-services' },
+    { name: 'Tiktok Services', href: '/services/tiktok-services' },
+    { name: 'Amazon Services', href: '/services/amazon-services' },
+    { name: 'Shopify Services', href: '/services/shopify-services' }
   ];
 
   const quickLinks = [
-    { name: "About Us", href: "#" },
-    { name: "Our Services", href: "#services" },
-    { name: "Portfolio", href: "#" },
+    { name: "About Us", href: "/about" },
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/pages/contact" },
     { name: "Blog", href: "#" }
   ];
 
@@ -58,73 +70,112 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Academic Writing Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-4">Academic Writing</h3>
             <ul className="space-y-2">
-              {services.map((service, index) => (
+              {academicServices.map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <Link 
+                    to={service.href}
                     className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
                   >
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Development Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">Development</h3>
             <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
+              {developmentServices.map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href} 
+                  <Link 
+                    to={service.href}
                     className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
                   >
-                    {link.name}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Newsletter & Social */}
+          {/* eCommerce Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
-            <p className="text-primary-foreground/80 text-sm mb-4">
-              Subscribe to our newsletter for updates and tips.
-            </p>
-            
-            <div className="flex mb-6">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-3 py-2 rounded-l-md bg-background/10 border border-background/20 text-primary-foreground placeholder-primary-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-accent-orange"
-              />
-              <button className="px-2 lg:px-4 py-2 bg-accent-orange hover:bg-accent-orange-light transition-colors rounded-r-md text-white text-sm font-medium">
-                Subscribe
-              </button>
+            <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
+            <ul className="space-y-2">
+              {ecommerceServices.map((service, index) => (
+                <li key={index}>
+                  <Link 
+                    to={service.href}
+                    className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Quick Links Row */}
+        <div className="mt-12 pt-8 border-t border-background/20">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-7">
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      to={link.href}
+                      className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    aria-label={social.name}
-                    className="inline-flex items-center justify-center w-10 h-10 bg-background/10 hover:bg-accent-orange rounded-full transition-colors duration-200 group"
-                  >
-                    <IconComponent className="h-4 w-4 text-primary-foreground group-hover:text-white" />
-                  </a>
-                );
-              })}
+            {/* Newsletter & Social */}
+            <div className="lg:col-span-3">
+              <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
+              <p className="text-primary-foreground/80 text-sm mb-4">
+                Subscribe to our newsletter for updates and tips.
+              </p>
+              
+              <div className="flex mb-6">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="flex-1 px-3 py-2 rounded-l-md bg-background/10 border border-background/20 text-primary-foreground placeholder-primary-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-accent-orange"
+                />
+                <button className="px-2 lg:px-4 py-2 bg-accent-orange hover:bg-accent-orange-light transition-colors rounded-r-md text-white text-sm font-medium">
+                  Subscribe
+                </button>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      aria-label={social.name}
+                      className="inline-flex items-center justify-center w-10 h-10 bg-background/10 hover:bg-accent-orange rounded-full transition-colors duration-200 group"
+                    >
+                      <IconComponent className="h-4 w-4 text-primary-foreground group-hover:text-white" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -138,15 +189,12 @@ const Footer = () => {
               © 2024 Office 24/7. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
+              <Link to="/privacy-policy" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
-                Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

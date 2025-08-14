@@ -18,6 +18,19 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://solutionoffice247.com/privacy-policy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://solutionoffice247.com/terms-of-service</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Categories -->
 
   <!-- Web Development category -->
@@ -64,9 +77,30 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Ecommerce-category -->
-  
-  
-  
-  
+  <!-- Ecommerce category -->
+  <url>
+    <loc>https://solutionoffice247.com/services/ebay-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionoffice247.com/services/walmart-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionoffice247.com/services/tiktok-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionoffice247.com/services/amazon-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://solutionoffice247.com/services/shopify-services</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
