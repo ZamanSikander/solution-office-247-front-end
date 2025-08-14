@@ -218,9 +218,7 @@ const Header = () => {
                 Contact
               </Link>
               <div className="px-3 py-2">
-                {/* <Button className="btn-premium w-full" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
-                </Button> */}
+                
                 <HashLink smooth to="/#services" className="btn-premium p-2 text-xs w-full" onClick={() => setIsMenuOpen(false)}>Get Started</HashLink>
               </div>
             </div>

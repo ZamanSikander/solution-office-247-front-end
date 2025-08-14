@@ -1,5 +1,6 @@
 
-import React from 'react';
+import {useState} from 'react';
+import ChoosePlanModal from './ChoosePlanModal';
 import { ArrowLeft, CheckCircle2, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -30,6 +31,16 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
   pricing,
   testimonial
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+const [selectedPlan, setSelectedPlan] = useState('');
+const [selectedService, setSelectedService] = useState('');
+
+const handleChoosePlan = (planName: string, serviceName: string) => {
+  setSelectedPlan(planName);
+  setSelectedService(serviceName);
+  setIsModalOpen(true);
+};
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -133,7 +144,10 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
                           <span className="text-neutral-600">{feature}</span>
                         </div>
                       ))}
-                      <Button className="btn-premium w-full mt-6">
+                      <Button
+                        className="btn-premium w-full mt-6"
+                        onClick={() => handleChoosePlan(plan.plan, title)} // ⬅ open modal
+                      >
                         Choose Plan
                       </Button>
                     </CardContent>
@@ -144,6 +158,15 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
           </div>
         </section>
       )}
+
+
+ {/* Modal Component */}
+ <ChoosePlanModal
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+  selectedPlan={selectedPlan}
+  selectedService={selectedService}
+/>
 
       {/* Testimonial Section */}
       {testimonial && (
