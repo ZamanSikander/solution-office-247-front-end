@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { Link } from 'react-router-dom';
@@ -142,9 +143,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <Button className="btn-premium">
-              Get Started
-            </Button>
+          <HashLink smooth to="/#services" className="btn-premium p-3 m-3 text-sm">Get Started</HashLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -219,9 +218,10 @@ const Header = () => {
                 Contact
               </Link>
               <div className="px-3 py-2">
-                <Button className="btn-premium w-full" onClick={() => setIsMenuOpen(false)}>
+                {/* <Button className="btn-premium w-full" onClick={() => setIsMenuOpen(false)}>
                   Get Started
-                </Button>
+                </Button> */}
+                <HashLink smooth to="/#services" className="btn-premium p-2 text-xs w-full" onClick={() => setIsMenuOpen(false)}>Get Started</HashLink>
               </div>
             </div>
           </div>

@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+import Services from "./components/Services";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import ResearchPapers from "./pages/services/ResearchPapers";
@@ -58,6 +59,7 @@ const AppRoutes = () => {
 
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="/pages/contact" element={<Contact/>} />
+      <Route path="/services" element={<Services/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
