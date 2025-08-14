@@ -2,6 +2,7 @@
 import { ArrowRight, Play, Star, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+import { HashLink } from 'react-router-hash-link';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero bg-mesh">
@@ -56,10 +57,12 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <HashLink smooth to='#services'>
               <Button className="btn-premium text-lg group">
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
+              </HashLink>
             </div>
 
             {/* Stats */}

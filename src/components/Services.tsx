@@ -1,8 +1,10 @@
 
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { BookOpen, Code, ShoppingCart, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { BrowserRouter } from 'react-router-dom';
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0);
@@ -219,10 +221,13 @@ const Services = () => {
               </div>
 
               <div className="pt-6">
+                <Link to='/pages/contact'>
                 <Button className="btn-premium text-sm lg:text-lg">
                   Request a Quote 
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
+                </Link>
+                
               </div>
             </div>
 

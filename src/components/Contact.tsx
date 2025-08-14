@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-
+import { Link } from 'react-router-dom';
 const Contact = () => {
 
   const contactInfo = [
@@ -48,9 +48,9 @@ const Contact = () => {
             Reach out to us and let's discuss how we can bring your vision to life.
           </p>
           <div className="mt-8">
-            <a href="/pages/contact">
+            <Link to="/pages/contact">
               <Button className="btn-gradient px-6 py-6 text-base">Get a quote</Button>
-            </a>
+            </Link>
           </div>
         </div>
 

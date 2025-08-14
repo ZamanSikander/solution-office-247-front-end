@@ -1,6 +1,7 @@
 
 import {useState} from 'react';
 import ChoosePlanModal from './ChoosePlanModal';
+import { HashLink } from 'react-router-hash-link';
 import { ArrowLeft, CheckCircle2, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -67,13 +68,17 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+            <HashLink smooth to="#pricing">
               <Button className="btn-premium text-lg">
                 Get Started Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button className="text-lg">
-                Request Quote
-              </Button>
+            </HashLink>
+              <Link to="/pages/contact">
+                <Button className="text-lg">
+                  Request Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -124,7 +129,7 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
 
       {/* Pricing Section */}
       {pricing && (
-        <section className="py-20 bg-neutral-50/50">
+        <section className="py-20 bg-neutral-50/50"  id='pricing'>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl lg:text-3xl font-display font-bold text-center mb-12">
@@ -205,9 +210,12 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
               Let's discuss your project and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <HashLink smooth to='#pricing'>
+
               <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 rounded-2xl text-lg">
                 Start Your Project
               </Button>
+              </HashLink>
               <Button className=" border-white text-white hover:bg-white hover:text-primary">
                 Schedule Consultation
               </Button>

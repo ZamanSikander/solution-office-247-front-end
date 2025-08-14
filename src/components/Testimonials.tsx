@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -174,9 +175,12 @@ const Testimonials = () => {
           <p className="text-muted-foreground mb-8">
             Experience the same level of quality and service that made these clients successful.
           </p>
+          <HashLink smooth to='#services'>
+
           <Button className="btn-gradient">
             Start Your Project Today
           </Button>
+          </HashLink>
         </div>
       </div>
     </section>
