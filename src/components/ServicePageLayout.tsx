@@ -216,9 +216,11 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
                 Start Your Project
               </Button>
               </HashLink>
+              <Link to="/schedule-consultation">
               <Button className=" border-white text-white hover:bg-white hover:text-primary">
                 Schedule Consultation
               </Button>
+              </Link>
             </div>
           </div>
         </div>
