@@ -25,6 +25,8 @@ import WalmartServices from "./pages/services/WalmartServices";
 import TiktokServices from "./pages/services/TiktokServices";
 import AmazonServices from "./pages/services/AmazonServices";
 import ShopifyServices from "./pages/services/ShopifyServices";
+import ScheduleConsultation from "./pages/services/ScheduleConsultation";
+
 const queryClient = new QueryClient();
 
 const AppRoutes = () => {
@@ -60,6 +62,7 @@ const AppRoutes = () => {
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="/pages/contact" element={<Contact/>} />
       <Route path="/services" element={<Services/>}/>
+      <Route path="/schedule-consultation" element={<ScheduleConsultation/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
