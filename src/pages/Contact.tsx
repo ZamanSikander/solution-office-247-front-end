@@ -17,30 +17,114 @@ const ContactPage = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [errors, setErrors] = useState({
+    fullName: '',
+    email: '',
+    contact: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: 'Message Sent!',
-      description:
-        "Thank you for your message. We'll get back to you within 24 hours.",
-    });
-    setFormData({ fullName: '', email: '', contact: '', message: '' });
+    
+    // Clear previous errors
+    setErrors({ fullName: '', email: '', contact: '', message: '' });
+    
+    // Field validation
+    let hasErrors = false;
+    const newErrors = { fullName: '', email: '', contact: '', message: '' };
+    
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Full name is required';
+      hasErrors = true;
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      hasErrors = true;
+    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+      hasErrors = true;
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+      hasErrors = true;
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message should be at least 10 characters';
+      hasErrors = true;
+    }
+    
+    if (hasErrors) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('http://localhost:5000/sendContact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.contact || '', // Handle empty contact number
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your message. We'll get back to you within 24 hours.",
+        });
+        setFormData({ fullName: '', email: '', contact: '', message: '' });
+        setErrors({ fullName: '', email: '', contact: '', message: '' });
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        toast({
+          title: "Failed to send message",
+          description: errorData.message || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Network Error",
+        description: "Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email Us',
-      content: 'info@solutionoffice247.com',
+      content: 'solutionoffice247@gmail.com',
       description: 'Send us an email anytime',
     },
     {
@@ -111,6 +195,9 @@ const ContactPage = () => {
                           className="w-full"
                           placeholder="John Doe"
                         />
+                        {errors.fullName && (
+                          <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
+                        )}
                       </div>
 
                       <div>
@@ -127,11 +214,14 @@ const ContactPage = () => {
                           className="w-full"
                           placeholder="john@example.com"
                         />
+                        {errors.email && (
+                          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                        )}
                       </div>
 
                       <div>
                         <label htmlFor="contact" className="block text-sm font-medium mb-2">
-                          Contact Number
+                          Contact Number (Optional)
                         </label>
                         <Input
                           id="contact"
@@ -139,10 +229,12 @@ const ContactPage = () => {
                           type="tel"
                           value={formData.contact}
                           onChange={handleChange}
-                          required
                           className="w-full"
-                          placeholder="+1 555 0123 456"
+                          placeholder="+1 555 0123 456 (Optional)"
                         />
+                        {errors.contact && (
+                          <p className="text-red-500 text-sm mt-1">{errors.contact}</p>
+                        )}
                       </div>
                     </div>
 
@@ -160,11 +252,30 @@ const ContactPage = () => {
                         className="w-full"
                         placeholder="Tell us about your project or question..."
                       />
+                      {errors.message && (
+                        <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                      )}
                     </div>
 
-                    <Button type="submit" className="btn-gradient w-full group">
-                      Send Message
-                      <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <Button 
+                      type="submit" 
+                      className="btn-gradient w-full group" 
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center justify-center">
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
                     </Button>
                   </form>
                 </CardContent>

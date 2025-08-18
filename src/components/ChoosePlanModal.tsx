@@ -54,7 +54,7 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
     setError(null);
 
     try {
-      const response = await fetch('/api/send-lead', {
+      const response = await fetch('http://localhost:5000/sendPlan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
