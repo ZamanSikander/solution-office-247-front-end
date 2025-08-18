@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { executeRecaptcha } from '@/lib/recaptcha';
 
 interface ChoosePlanModalProps {
   isOpen: boolean;
@@ -54,6 +55,7 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
     setError(null);
 
     try {
+      const recaptchaToken = await executeRecaptcha('plan_submit');
       const response = await fetch('https://solution-office-247-back-end.vercel.app/sendPlan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -61,7 +63,9 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
           name: formData.name.trim(), 
           email: formData.email.trim(), 
           plan: selectedPlan,
-          service: selectedService
+          service: selectedService,
+          recaptchaToken,
+          recaptchaAction: 'plan_submit'
         }),
       });
 

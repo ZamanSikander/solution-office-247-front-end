@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import { executeRecaptcha } from '@/lib/recaptcha';
 
 const ContactPage = () => {
   const { toast } = useToast();
@@ -65,6 +66,9 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
+      // Get reCAPTCHA v3 token for this action
+      const recaptchaToken = await executeRecaptcha('contact_submit');
+
       const response = await fetch('https://solution-office-247-back-end.vercel.app/sendContact', {
         method: 'POST',
         headers: {
@@ -75,6 +79,8 @@ const ContactPage = () => {
           email: formData.email,
           phone: formData.contact || '', // Handle empty contact number
           message: formData.message,
+          recaptchaToken,
+          recaptchaAction: 'contact_submit',
         }),
       });
 
