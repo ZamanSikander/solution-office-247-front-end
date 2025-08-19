@@ -34,7 +34,7 @@ const Header = () => {
 
   const ecommerceServices = [
     { name: 'Ebay Services', href: '/services/ebay-services' },
-    { name: 'Walmart Servicese', href: '/services/walmart-services' },
+    { name: 'Walmart Services', href: '/services/walmart-services' },
     { name: 'Tiktok Services', href: '/services/tiktok-services' },
     { name: 'Amazon Services', href: '/services/amazon-services' },
     { name: 'Shopify Services', href: '/services/shopify-services' }
