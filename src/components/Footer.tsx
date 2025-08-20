@@ -2,6 +2,14 @@ import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook, Instagram } from 'luc
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const ecommerceServices = [
+    { name: 'Ebay Services', href: '/services/ebay-services' },
+    { name: 'Walmart Services', href: '/services/walmart-services' },
+    { name: 'Tiktok Services', href: '/services/tiktok-services' },
+    { name: 'Amazon Services', href: '/services/amazon-services' },
+    { name: 'Shopify Services', href: '/services/shopify-services' }
+  ];
+  
   const academicServices = [
     { name: 'Research Papers', href: '/services/research-papers' },
     { name: 'Thesis & Dissertations', href: '/services/thesis-dissertation' },
@@ -16,13 +24,7 @@ const Footer = () => {
     { name: 'WordPress Development', href: '/services/wordpress-development' },
   ];
 
-  const ecommerceServices = [
-    { name: 'Ebay Services', href: '/services/ebay-services' },
-    { name: 'Walmart Services', href: '/services/walmart-services' },
-    { name: 'Tiktok Services', href: '/services/tiktok-services' },
-    { name: 'Amazon Services', href: '/services/amazon-services' },
-    { name: 'Shopify Services', href: '/services/shopify-services' }
-  ];
+  
 
   const quickLinks = [
     { name: "About Us", href: "/about" },
@@ -69,12 +71,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* Academic Writing Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Academic Writing</h3>
+  {/* eCommerce Services */}
+  <div>
+            <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
             <ul className="space-y-2">
-              {academicServices.map((service, index) => (
+              {ecommerceServices.map((service, index) => (
                 <li key={index}>
                   <Link 
                     to={service.href}
@@ -104,11 +105,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* eCommerce Services */}
+          
+          {/* Academic Writing Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
+            <h3 className="text-lg font-semibold mb-4">Academic Writing</h3>
             <ul className="space-y-2">
-              {ecommerceServices.map((service, index) => (
+              {academicServices.map((service, index) => (
                 <li key={index}>
                   <Link 
                     to={service.href}
@@ -120,6 +122,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+
         </div>
 
         {/* Quick Links Row */}
