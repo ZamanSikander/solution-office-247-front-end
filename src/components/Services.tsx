@@ -16,70 +16,6 @@ const Services = () => {
   }, [activeService]);
   const services = [
     {
-      id: 0,
-      title: "Academic Writing",
-      description: "Premium academic support with expert research and analysis",
-      icon: BookOpen,
-      color: "text-accent-coral",
-      bgColor: "bg-accent-coral/10",
-      gradientFrom: "from-accent-coral/20",
-      gradientTo: "to-accent-coral/5",
-      subcategories: [
-        { 
-          name: "Research Papers", 
-          description: "In-depth research with scholarly analysis and citations",
-          link: "/services/research-papers"
-        },
-        { 
-          name: "Thesis & Dissertations", 
-          description: "Comprehensive graduate-level academic support",
-          link: "/services/thesis-dissertation"
-        },
-        { 
-          name: "Essays & Assignments", 
-          description: "High-quality essays with original content and analysis",
-          link: "/services/essay-assignments"
-        },
-        { 
-          name: "Editing & Proofreading", 
-          description: "Professional editing with grammar and style enhancement",
-          link: "/services/editing-proofreading"
-        }
-      ]
-    },
-    {
-      id: 1,
-      title: "Front-End Development",
-      description: "Modern, responsive applications with cutting-edge technology",
-      icon: Code,
-      color: "text-accent-teal",
-      bgColor: "bg-accent-teal/10",
-      gradientFrom: "from-accent-teal/20",
-      gradientTo: "to-accent-teal/5",
-      subcategories: [
-        { 
-          name: "React.js Development", 
-          description: "Interactive React applications with modern best practices",
-          link: "/services/react-development"
-        },
-        { 
-          name: "Responsive UI Design", 
-          description: "Beautiful, responsive designs with utility-first CSS",
-          link: "/services/responsive-design"
-        },
-        { 
-          name: "Motion & Animation Design", 
-          description: "Engaging animations and smooth micro-interactions",
-          link: "/services/animation-design"
-        },
-        { 
-          name: "WordPress Development", 
-          description: "Professional WordPress and WooCommerce development for fast, secure, and fully customized websites and online stores.",
-          link: "/services/wordpress-development"
-        }
-      ]
-    },
-    {
       id: 2,
       title: "eCommerce",
       description: "Complete eCommerce solutions with excellent results",
@@ -113,6 +49,71 @@ const Services = () => {
           name: "Shopify Services", 
           description: "Optimized product listings and marketplace management",
           link: "/services/shopify-services"
+        }
+      ]
+    },
+    
+    {
+      id: 1,
+      title: "Front-End Development",
+      description: "Modern, responsive applications with cutting-edge technology",
+      icon: Code,
+      color: "text-accent-teal",
+      bgColor: "bg-accent-teal/10",
+      gradientFrom: "from-accent-teal/20",
+      gradientTo: "to-accent-teal/5",
+      subcategories: [
+        { 
+          name: "React.js Development", 
+          description: "Interactive React applications with modern best practices",
+          link: "/services/react-development"
+        },
+        { 
+          name: "Responsive UI Design", 
+          description: "Beautiful, responsive designs with utility-first CSS",
+          link: "/services/responsive-design"
+        },
+        { 
+          name: "Motion & Animation Design", 
+          description: "Engaging animations and smooth micro-interactions",
+          link: "/services/animation-design"
+        },
+        { 
+          name: "WordPress Development", 
+          description: "Professional WordPress and WooCommerce development for fast, secure, and fully customized websites and online stores.",
+          link: "/services/wordpress-development"
+        }
+      ]
+    },
+    {
+      id: 0,
+      title: "Academic Writing",
+      description: "Premium academic support with expert research and analysis",
+      icon: BookOpen,
+      color: "text-accent-coral",
+      bgColor: "bg-accent-coral/10",
+      gradientFrom: "from-accent-coral/20",
+      gradientTo: "to-accent-coral/5",
+      subcategories: [
+        { 
+          name: "Research Papers", 
+          description: "In-depth research with scholarly analysis and citations",
+          link: "/services/research-papers"
+        },
+        { 
+          name: "Thesis & Dissertations", 
+          description: "Comprehensive graduate-level academic support",
+          link: "/services/thesis-dissertation"
+        },
+        { 
+          name: "Essays & Assignments", 
+          description: "High-quality essays with original content and analysis",
+          link: "/services/essay-assignments"
+        },
+        { 
+          name: "Editing & Proofreading", 
+          description: "Professional editing with grammar and style enhancement",
+          link: "/services/editing-proofreading"
         }
       ]
     }

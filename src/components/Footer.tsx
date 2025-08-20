@@ -71,12 +71,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* Academic Writing Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Academic Writing</h3>
+  {/* eCommerce Services */}
+  <div>
+            <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
             <ul className="space-y-2">
-              {academicServices.map((service, index) => (
+              {ecommerceServices.map((service, index) => (
                 <li key={index}>
                   <Link 
                     to={service.href}
@@ -106,11 +105,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* eCommerce Services */}
+          
+          {/* Academic Writing Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
+            <h3 className="text-lg font-semibold mb-4">Academic Writing</h3>
             <ul className="space-y-2">
-              {ecommerceServices.map((service, index) => (
+              {academicServices.map((service, index) => (
                 <li key={index}>
                   <Link 
                     to={service.href}
@@ -122,6 +122,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
+
         </div>
 
         {/* Quick Links Row */}
