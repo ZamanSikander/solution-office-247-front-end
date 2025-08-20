@@ -9,7 +9,7 @@ const Footer = () => {
     { name: 'Amazon Services', href: '/services/amazon-services' },
     { name: 'Shopify Services', href: '/services/shopify-services' }
   ];
-  
+
   const academicServices = [
     { name: 'Research Papers', href: '/services/research-papers' },
     { name: 'Thesis & Dissertations', href: '/services/thesis-dissertation' },
@@ -24,7 +24,7 @@ const Footer = () => {
     { name: 'WordPress Development', href: '/services/wordpress-development' },
   ];
 
-  
+
 
   const quickLinks = [
     { name: "About Us", href: "/about" },
@@ -51,15 +51,15 @@ const Footer = () => {
               Solution Office 24/7
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Your trusted partner for academic writing, front-end development, 
+              Your trusted partner for academic writing, front-end development,
               and eCommerce solutions. Quality work delivered 24/7.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-accent-orange" />
-                <span className="text-sm">info@solutionoffice247.com</span>
+                <span className="text-sm">solutionoffice247@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-accent-orange" />
@@ -71,13 +71,13 @@ const Footer = () => {
               </div>
             </div>
           </div>
-  {/* eCommerce Services */}
-  <div>
+          {/* eCommerce Services */}
+          <div>
             <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
             <ul className="space-y-2">
               {ecommerceServices.map((service, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     to={service.href}
                     className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
                   >
@@ -94,7 +94,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {developmentServices.map((service, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     to={service.href}
                     className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
                   >
@@ -105,14 +105,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          
+
           {/* Academic Writing Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Academic Writing</h3>
             <ul className="space-y-2">
               {academicServices.map((service, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     to={service.href}
                     className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
                   >
@@ -134,7 +134,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <Link 
+                    <Link
                       to={link.href}
                       className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
                     >
@@ -151,7 +151,7 @@ const Footer = () => {
               <p className="text-primary-foreground/80 text-sm mb-4">
                 Subscribe to our newsletter for updates and tips.
               </p>
-              
+
               <div className="flex mb-6">
                 <input
                   type="email"
