@@ -232,7 +232,7 @@ const ContactPage = () => {
                         <Input
                           id="contact"
                           name="contact"
-                          type="tel"
+                          type="number"
                           value={formData.contact}
                           onChange={handleChange}
                           className="w-full"
