@@ -26,6 +26,9 @@ import TiktokServices from "./pages/services/TiktokServices";
 import AmazonServices from "./pages/services/AmazonServices";
 import ShopifyServices from "./pages/services/ShopifyServices";
 import ScheduleConsultation from "./pages/services/ScheduleConsultation";
+import Ecommerce from "./pages/services/Ecommerce";
+import FrontEnd from "./pages/services/FrontEnd";
+import AcademicsWriting from "./pages/services/AcademicsWriting";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +48,11 @@ const AppRoutes = () => {
       <Route path="/services/thesis-dissertation" element={<ThesisDissertation/>} />
       <Route path="/services/essay-assignments" element={<EssayAssignments/>}/>
       <Route path="/services/editing-proofreading" element={<EditingProofreading/>}/>
+
+     { /*main services*/}
+     <Route path="/services/pages/ecommerce" element={<Ecommerce />} />
+     <Route path="/services/pages/frontend" element={<FrontEnd />} />
+     <Route path="/services/pages/academicswriting" element={<AcademicsWriting />} />
       {/* Development Services */}
       <Route path="/services/react-development" element={<ReactDevelopment />} />
       <Route path="/services/responsive-design" element={<ResponsiveUi />} />

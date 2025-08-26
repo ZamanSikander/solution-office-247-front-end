@@ -19,6 +19,7 @@ const Header = () => {
   }, []);
 
   const academicServices = [
+    { name: 'Academics Writing', href: '/services/pages/academicswriting' },
     { name: 'Research Papers', href: '/services/research-papers' },
     { name: 'Thesis & Dissertations', href: '/services/thesis-dissertation' },
     { name: 'Essays & Assignments', href: '/services/essay-assignments' },
@@ -26,6 +27,7 @@ const Header = () => {
   ];
 
   const developmentServices = [
+    { name: 'Front-end development', href: '/services/pages/frontend' },
     { name: 'React.js Development', href: '/services/react-development' },
     { name: 'Responsive UI Design', href: '/services/responsive-design' },
     { name: 'Motion & Animation Design', href: '/services/animation-design' },
@@ -33,6 +35,7 @@ const Header = () => {
   ];
 
   const ecommerceServices = [
+    {name: "E-Commerce Services", href: '/services/pages/ecommerce'},
     { name: 'Ebay Services', href: '/services/ebay-services' },
     { name: 'Walmart Services', href: '/services/walmart-services' },
     { name: 'Tiktok Services', href: '/services/tiktok-services' },
