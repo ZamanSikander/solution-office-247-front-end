@@ -89,7 +89,7 @@
            heading: "Ready to grow?",
            subheading: "Get a free consultation with our e-commerce experts.",
            primaryLabel: "Get a Free Consultation",
-           primaryHref: "/contact",
+           primaryHref: "/pages/contact",
          }}
        />
        <Footer />
