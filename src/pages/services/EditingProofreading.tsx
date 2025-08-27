@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicePageLayout from '@/components/ServicePageLayout';
 
-const ResearchPapers = () => {
+const EditingProofreading = () => {
   const features = [
     "Comprehensive grammar, spelling, and punctuation correction",
     "Sentence structure improvement and clarity enhancement",
@@ -101,4 +101,4 @@ const ResearchPapers = () => {
   );
 };
 
-export default ResearchPapers;
+export default EditingProofreading;
