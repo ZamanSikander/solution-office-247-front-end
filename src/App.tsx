@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+import { HelmetProvider } from "react-helmet-async";
+import Layout from "./components/canonicals/Layout.jsx"
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -37,46 +39,50 @@ const AppRoutes = () => {
   
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/pages/contact" element={<Contact />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/terms-of-service" element={<TermsOfService />} />
-      
-      {/* Academic Writing Services */}
-      <Route path="/services/research-papers" element={<ResearchPapers />} />
-      <Route path="/services/thesis-dissertation" element={<ThesisDissertation/>} />
-      <Route path="/services/essay-assignments" element={<EssayAssignments/>}/>
-      <Route path="/services/editing-proofreading" element={<EditingProofreading/>}/>
+  <Route element={<Layout />}>
+    <Route path="/" element={<Index />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/pages/contact" element={<Contact />} />
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    <Route path="/terms-of-service" element={<TermsOfService />} />
 
-     { /*main services*/}
-     <Route path="/services/pages/ecommerce" element={<Ecommerce />} />
-     <Route path="/services/pages/frontend" element={<FrontEnd />} />
-     <Route path="/services/pages/academicswriting" element={<AcademicsWriting />} />
-      {/* Development Services */}
-      <Route path="/services/react-development" element={<ReactDevelopment />} />
-      <Route path="/services/responsive-design" element={<ResponsiveUi />} />
-      <Route path="/services/animation-design" element={<AnimationDesign />} />
-      <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
+    {/* Academic Writing Services */}
+    <Route path="/services/research-papers" element={<ResearchPapers />} />
+    <Route path="/services/thesis-dissertation" element={<ThesisDissertation />} />
+    <Route path="/services/essay-assignments" element={<EssayAssignments />} />
+    <Route path="/services/editing-proofreading" element={<EditingProofreading />} />
 
-      {/* {Ecommerce services} */}
-      <Route path="/services/ebay-services" element={<EbayServices />} />
-      <Route path="/services/walmart-services" element={<WalmartServices />} />
-      <Route path="/services/tiktok-services" element={<TiktokServices />} />
-      <Route path="/services/amazon-services" element={<AmazonServices />} />
+    {/* Main services */}
+    <Route path="/services/pages/ecommerce" element={<Ecommerce />} />
+    <Route path="/services/pages/frontend" element={<FrontEnd />} />
+    <Route path="/services/pages/academicswriting" element={<AcademicsWriting />} />
 
-      <Route path="/services/shopify-services" element={<ShopifyServices />} />
+    {/* Development Services */}
+    <Route path="/services/react-development" element={<ReactDevelopment />} />
+    <Route path="/services/responsive-design" element={<ResponsiveUi />} />
+    <Route path="/services/animation-design" element={<AnimationDesign />} />
+    <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
 
-      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-      <Route path="/pages/contact" element={<Contact/>} />
-      <Route path="/services" element={<Services/>}/>
-      <Route path="/schedule-consultation" element={<ScheduleConsultation/>}/>
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    {/* Ecommerce services */}
+    <Route path="/services/ebay-services" element={<EbayServices />} />
+    <Route path="/services/walmart-services" element={<WalmartServices />} />
+    <Route path="/services/tiktok-services" element={<TiktokServices />} />
+    <Route path="/services/amazon-services" element={<AmazonServices />} />
+    <Route path="/services/shopify-services" element={<ShopifyServices />} />
+
+    {/* Misc */}
+    <Route path="/services" element={<Services />} />
+    <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
+
+    {/* Catch-all */}
+    <Route path="*" element={<NotFound />} />
+  </Route>
+</Routes>
   );
 };
 
 const App = () => (
+  <HelmetProvider>
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -86,6 +92,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
