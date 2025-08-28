@@ -1,5 +1,6 @@
 
 import { BookOpen } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicePageLayout from '@/components/ServicePageLayout';
@@ -75,6 +76,9 @@ const ResearchPapers = () => {
 
   return (
     <div>
+      <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/services/walmart-services" />
+      </Helmet>
       <Header />
       <ServicePageLayout
         title="Walmart Marketplace Management"

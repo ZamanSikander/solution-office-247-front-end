@@ -1,5 +1,6 @@
 
 import { BookOpen } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicePageLayout from '@/components/ServicePageLayout';
@@ -83,6 +84,9 @@ const EditingProofreading = () => {
 
   return (
     <div>
+      <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/services/editing-proofreading" />
+      </Helmet>
       <Header />
       <ServicePageLayout
         title="Editing & Proofreading"

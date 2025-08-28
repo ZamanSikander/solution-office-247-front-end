@@ -1,12 +1,16 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet-async";
 import MainServicesLayout from "@/components/MainServicesLayout";
 import { ShoppingCart, Store, Users, Sparkles } from "lucide-react";
 
 export default function AcademicsWriting() {
   return (
     <>
+    <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/services/pages/academicswriting" />
+      </Helmet>
       <Header />
       <MainServicesLayout
         hero={{

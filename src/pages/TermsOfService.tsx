@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FileText, CheckCircle, AlertTriangle, Users, CreditCard, Shield } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -77,6 +78,9 @@ const TermsOfService = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/terms-of-service" />
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

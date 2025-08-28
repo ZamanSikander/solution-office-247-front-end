@@ -1,5 +1,6 @@
 
  import Header from "@/components/Header";
+ import { Helmet } from "react-helmet-async";
  import Footer from "@/components/Footer";
  import MainServicesLayout from "@/components/MainServicesLayout";
  import { ShoppingCart, Store, Users, Sparkles } from "lucide-react";
@@ -7,6 +8,9 @@
  export default function Ecommerce() {
    return (
      <>
+     <Helmet>
+      <link rel="canonical" href="https://solutionoffice247.com/services/pages/ecommerce" />
+     </Helmet>
        <Header />
        <MainServicesLayout
          hero={{
