@@ -1,5 +1,6 @@
 // src/pages/ScheduleConsultation.tsx
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { CheckCircle2, Calendar, MessageCircle, Clock, ArrowRight } from 'lucide-react';
@@ -10,6 +11,9 @@ import { Link } from 'react-router-dom';
 const ScheduleConsultation = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/schedule-consultation" />
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

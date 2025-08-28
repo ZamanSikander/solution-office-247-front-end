@@ -1,5 +1,6 @@
 
 import { Code } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicePageLayout from '@/components/ServicePageLayout';
@@ -80,6 +81,9 @@ const ReactDevelopment = () => {
 
   return (
     <div>
+      <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/services/animation-design" />
+      </Helmet>
       <Header />
       <ServicePageLayout
         title="🎞️ Motion & Animation Design (using Motion.dev)"

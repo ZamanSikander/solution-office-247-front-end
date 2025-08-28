@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Award, Heart, Rocket, Shield, Target, Users } from 'lucide-react';
 
@@ -52,6 +53,9 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <link rel="canonical" href="https://solutionoffice247.com/about" />
+      </Helmet>
       <Header />
 
       {/* Hero */}

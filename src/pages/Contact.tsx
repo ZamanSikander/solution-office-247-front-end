@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
@@ -29,19 +30,19 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Clear previous errors
     setErrors({ fullName: '', email: '', contact: '', message: '' });
-    
+
     // Field validation
     let hasErrors = false;
     const newErrors = { fullName: '', email: '', contact: '', message: '' };
-    
+
     if (!formData.fullName.trim()) {
       newErrors.fullName = 'Full name is required';
       hasErrors = true;
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
       hasErrors = true;
@@ -49,7 +50,7 @@ const ContactPage = () => {
       newErrors.email = 'Please enter a valid email address';
       hasErrors = true;
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
       hasErrors = true;
@@ -57,7 +58,7 @@ const ContactPage = () => {
       newErrors.message = 'Message should be at least 10 characters';
       hasErrors = true;
     }
-    
+
     if (hasErrors) {
       setErrors(newErrors);
       return;
@@ -119,7 +120,7 @@ const ContactPage = () => {
       ...prev,
       [name]: value,
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -155,8 +156,13 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Helmet>
+        <title>Contact Us - Solution Office 247</title>
+        <meta name="description" content="Get in touch with Solution Office 247..." />
+        <link rel="canonical" href="https://solutionoffice247.com/pages/contact" />
+      </Helmet>
 
+      <Header />
       {/* Hero */}
       <section className="relative pt-32 pb-16 bg-gradient-primary overflow-hidden">
         <div className="absolute inset-0 bg-mesh opacity-20"></div>
@@ -263,9 +269,9 @@ const ContactPage = () => {
                       )}
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      className="btn-gradient w-full group" 
+                    <Button
+                      type="submit"
+                      className="btn-gradient w-full group"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
