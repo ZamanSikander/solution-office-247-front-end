@@ -52,11 +52,14 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
           <Link to="/">
-            <img
-              src={logo6}
-              alt="Solution Office Logo"
-              className='w-48 sm:w-56 md:w-64'
-            />
+          <img
+  src={logo6}
+  alt="Solution Office Logo"
+  width="512"
+  height="128"
+  className="w-48 sm:w-56 md:w-64 h-auto"
+/>
+
           </Link>
           {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
               Solution Office 24/7
