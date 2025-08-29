@@ -11,23 +11,31 @@
   <link rel="icon" type="icon" href="/favicon.ico" />
   <link rel="canonical" href="https://solutionoffice247.com/" />
 
-  <!-- Google Fonts -->
+  <!-- ✅ Preconnect (early DNS + TLS handshake for fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
 
-  <!-- Preconnect for GTM / Analytics -->
+  <!-- ✅ Preload Google Fonts stylesheet (no 404 issue) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap">
+
+  <!-- ✅ Load Google Fonts stylesheet (non-blocking) -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    media="all">
+
+  <!-- ✅ Preconnect for GTM / Analytics (lower priority than fonts) -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com">
 </head>
 
+
+
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK5TD86S"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK5TD86S" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
