@@ -81,7 +81,7 @@ const Testimonials = () => {
             <span className="block text-accent-orange">Say About Us</span>
           </h2>
           <p className="text-md lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied clients have to say 
+            Don't just take our word for it. Here's what our satisfied clients have to say
             about their experience working with Office 24/7.
           </p>
         </div>
@@ -89,7 +89,7 @@ const Testimonials = () => {
         {/* Testimonial Slider */}
         <div className="relative max-w-4xl mx-auto">
           <div className="relative overflow-hidden rounded-3xl">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
@@ -117,7 +117,7 @@ const Testimonials = () => {
 
                         {/* Author */}
                         <div className="flex items-center justify-center space-x-4">
-                         
+
                           <div className="text-left">
                             <div className="font-semibold text-md">{testimonial.name}</div>
                             <div className="text-muted-foreground text-sm">{testimonial.role}</div>
@@ -139,20 +139,27 @@ const Testimonials = () => {
               size="icon"
               onClick={prevSlide}
               className="rounded-full w-12 h-12"
+              aria-label="Previous slide" // 👈 Adds accessible name
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft
+                className="h-5 w-5"
+                aria-hidden="true" // 👈 Icon is decorative
+              />
             </Button>
-            
+
+
             {/* Dots */}
             <div className="flex space-x-2">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? 'bg-primary' : 'bg-muted'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-primary' : 'bg-muted'
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`} // 👈 Makes it descriptive
+                  aria-current={index === currentSlide ? "true" : "false"} // 👈 Indicates active slide
                 />
+
               ))}
             </div>
 
@@ -161,9 +168,14 @@ const Testimonials = () => {
               size="icon"
               onClick={nextSlide}
               className="rounded-full w-12 h-12"
+              aria-label="Next slide" // 👈 Accessible name
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight
+                className="h-5 w-5"
+                aria-hidden="true" // 👈 Icon hidden from screen readers
+              />
             </Button>
+
           </div>
         </div>
 
@@ -177,9 +189,9 @@ const Testimonials = () => {
           </p>
           <HashLink smooth to='#services'>
 
-          <Button className="btn-gradient">
-            Start Your Project Today
-          </Button>
+            <Button className="btn-gradient">
+              Start Your Project Today
+            </Button>
           </HashLink>
         </div>
       </div>

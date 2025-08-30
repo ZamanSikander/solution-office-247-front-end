@@ -27,11 +27,11 @@ const Hero = () => {
             {/* Main Heading */}
             <div className="space-y-6">
               <h1 className="text-2xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight  text-gradient-premium">
-              Powering Your Ideas with Words, Code & eCommerce
+                Powering Your Ideas with Words, Code & eCommerce
               </h1>
               <p className="text-sm lg:text-xl text-gray-900/70 leading-relaxed max-w-3xl mx-auto">
-              Expert academic writing, cutting-edge front-end development, and comprehensive eCommerce solutions.
-              <span className='hidden sm:inline'> Your success is our mission.</span>
+                Expert academic writing, cutting-edge front-end development, and comprehensive eCommerce solutions.
+                <span className='hidden sm:inline'> Your success is our mission.</span>
               </p>
             </div>
 
@@ -58,10 +58,17 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <HashLink smooth to='#services'>
-              <Button className="btn-premium text-lg group">
-                Start Your Project
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                <Button
+                  className="btn-premium text-lg group"
+                  aria-label="Start Your Project" // Accessible label for screen readers
+                >
+                  <span>Start Your Project</span>
+                  <ArrowRight
+                    className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+                    aria-hidden="true" // Hide icon from screen readers
+                  />
+                </Button>
+
               </HashLink>
             </div>
 

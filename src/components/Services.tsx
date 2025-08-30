@@ -25,34 +25,34 @@ const Services = () => {
       gradientFrom: "from-accent-lilac/20",
       gradientTo: "to-accent-lilac/5",
       subcategories: [
-        { 
-          name: "Ebay Services", 
+        {
+          name: "Ebay Services",
           description: "Custom WordPress sites with premium themes and plugins",
           link: "/services/ebay-services"
         },
-        { 
-          name: "Walmart Services", 
+        {
+          name: "Walmart Services",
           description: "Full-featured online stores with payment integration",
           link: "/services/walmart-services"
         },
-        { 
-          name: "Tiktok Services", 
+        {
+          name: "Tiktok Services",
           description: "Professional Shopify development and customization",
           link: "/services/tiktok-services"
         },
-        { 
-          name: "Amazon Services", 
+        {
+          name: "Amazon Services",
           description: "Optimized product listings and marketplace management",
           link: "/services/amazon-services"
         },
-        { 
-          name: "Shopify Services", 
+        {
+          name: "Shopify Services",
           description: "Optimized product listings and marketplace management",
           link: "/services/shopify-services"
         }
       ]
     },
-    
+
     {
       id: 1,
       title: "Front-End Development",
@@ -63,23 +63,23 @@ const Services = () => {
       gradientFrom: "from-accent-teal/20",
       gradientTo: "to-accent-teal/5",
       subcategories: [
-        { 
-          name: "React.js Development", 
+        {
+          name: "React.js Development",
           description: "Interactive React applications with modern best practices",
           link: "/services/react-development"
         },
-        { 
-          name: "Responsive UI Design", 
+        {
+          name: "Responsive UI Design",
           description: "Beautiful, responsive designs with utility-first CSS",
           link: "/services/responsive-design"
         },
-        { 
-          name: "Motion & Animation Design", 
+        {
+          name: "Motion & Animation Design",
           description: "Engaging animations and smooth micro-interactions",
           link: "/services/animation-design"
         },
-        { 
-          name: "WordPress Development", 
+        {
+          name: "WordPress Development",
           description: "Professional WordPress and WooCommerce development for fast, secure, and fully customized websites and online stores.",
           link: "/services/wordpress-development"
         }
@@ -95,23 +95,23 @@ const Services = () => {
       gradientFrom: "from-accent-coral/20",
       gradientTo: "to-accent-coral/5",
       subcategories: [
-        { 
-          name: "Research Papers", 
+        {
+          name: "Research Papers",
           description: "In-depth research with scholarly analysis and citations",
           link: "/services/research-papers"
         },
-        { 
-          name: "Thesis & Dissertations", 
+        {
+          name: "Thesis & Dissertations",
           description: "Comprehensive graduate-level academic support",
           link: "/services/thesis-dissertation"
         },
-        { 
-          name: "Essays & Assignments", 
+        {
+          name: "Essays & Assignments",
           description: "High-quality essays with original content and analysis",
           link: "/services/essay-assignments"
         },
-        { 
-          name: "Editing & Proofreading", 
+        {
+          name: "Editing & Proofreading",
           description: "Professional editing with grammar and style enhancement",
           link: "/services/editing-proofreading"
         }
@@ -133,7 +133,7 @@ const Services = () => {
             <span className="block m-1 text-gradient-premium">Every Digital Need</span>
           </h2>
           <p className="text-md lg:text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
-            We offer three specialized service areas, each designed to deliver exceptional results 
+            We offer three specialized service areas, each designed to deliver exceptional results
             and help you achieve your goals with premium quality and professional excellence.
           </p>
         </div>
@@ -144,11 +144,10 @@ const Services = () => {
             const IconComponent = service.icon;
             const isActive = activeService === index;
             return (
-              <Card 
+              <Card
                 key={service.id}
-                className={`service-card-premium cursor-pointer border-0 transition-all duration-500 scroll-reveal animate ${
-                  isActive ? 'scale-105 shadow-premium' : 'hover:scale-105'
-                }`}
+                className={`service-card-premium cursor-pointer border-0 transition-all duration-500 scroll-reveal animate ${isActive ? 'scale-105 shadow-premium' : 'hover:scale-105'
+                  }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setActiveService(index)}
               >
@@ -163,14 +162,16 @@ const Services = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="text-center relative">
-                  <Button 
+                  <Button
                     variant={isActive ? "default" : "outline"}
-                    className={`group transition-all duration-300 ${
-                      isActive ? 'btn-premium' : 'btn-outline-premium'
-                    }`}
+                    className={`group transition-all duration-300 ${isActive ? 'btn-premium' : 'btn-outline-premium'
+                      }`}
                   >
                     Explore Services
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight
+                      className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"
+                      aria-hidden="true" // Hides icon from screen readers
+                    />
                   </Button>
                 </CardContent>
               </Card>
@@ -180,7 +181,7 @@ const Services = () => {
 
         {/* Detailed Service Breakdown */}
         <div className="glass-card rounded-3xl p-2 lg:p-16 shadow-premium"
-        ref={detailRef}
+          ref={detailRef}
         >
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -196,11 +197,11 @@ const Services = () => {
                   {services[activeService].description}
                 </p>
               </div>
-              
+
               <div className="space-y-6">
                 {services[activeService].subcategories.map((sub, index) => (
                   <div key={index} className="group cursor-pointer">
-                    <a 
+                    <a
                       href={sub.link}
                       className="flex items-start space-x-2 p-1 lg:p-4 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-medium"
                     >
@@ -223,12 +224,14 @@ const Services = () => {
 
               <div className="pt-6">
                 <Link to='/pages/contact'>
-                <Button className="btn-premium text-sm lg:text-lg">
-                  Request a Quote 
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                  <Button className="btn-premium text-sm lg:text-lg">
+                    Request a Quote
+                    <ArrowRight className="ml-2 h-5 w-5" 
+                    aria-hidden="true"
+                    />
+                  </Button>
                 </Link>
-                
+
               </div>
             </div>
 

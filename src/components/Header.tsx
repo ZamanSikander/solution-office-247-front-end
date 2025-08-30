@@ -5,7 +5,8 @@ import { HashLink } from 'react-router-hash-link';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { Link } from 'react-router-dom';
-import logo6 from '@/assets/logo6.png'
+import logo6 from '@/assets/logo6.png';
+import logo6_1 from "@/assets/logo6_1.webp"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,7 @@ const Header = () => {
   ];
 
   const ecommerceServices = [
-    {name: "E-Commerce Services", href: '/services/pages/ecommerce'},
+    { name: "E-Commerce Services", href: '/services/pages/ecommerce' },
     { name: 'Ebay Services', href: '/services/ebay-services' },
     { name: 'Walmart Services', href: '/services/walmart-services' },
     { name: 'Tiktok Services', href: '/services/tiktok-services' },
@@ -44,24 +45,23 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'glass-card shadow-premium' : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-card shadow-premium' : 'bg-transparent'
+      }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-          <Link to="/">
-          <img
-  src={logo6}
-  alt="Solution Office Logo"
-  width="512"
-  height="128"
-  className="w-48 sm:w-56 md:w-64 h-auto"
-/>
+            <Link to="/">
+              <img
+                src={logo6_1}
+                alt="Solution Office Logo"
+                width="512"
+                height="128"
+                className="w-48 sm:w-56 md:w-64 h-auto"
+              />
 
-          </Link>
-          {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
+            </Link>
+            {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
               Solution Office 24/7
             </div> */}
           </div>
@@ -69,10 +69,10 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
             <Link to="/" className="nav-link px-4 py-2">Home</Link>
-            
+
             <NavigationMenu>
               <NavigationMenuList>
-              <NavigationMenuItem>
+                <NavigationMenuItem>
                   <NavigationMenuTrigger className="nav-link px-4 py-2 bg-transparent hover:bg-transparent">
                     eCommerce
                   </NavigationMenuTrigger>
@@ -94,7 +94,7 @@ const Header = () => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-               
+
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="nav-link px-4 py-2 bg-transparent hover:bg-transparent">
@@ -149,7 +149,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-          <HashLink smooth to="/#services" className="btn-premium p-3 m-3 text-sm">Get Started</HashLink>
+            <HashLink smooth to="/#services" className="btn-premium p-3 m-3 text-sm">Get Started</HashLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -224,7 +224,7 @@ const Header = () => {
                 Contact
               </Link>
               <div className="px-3 py-2">
-                
+
                 <HashLink smooth to="/#services" className="btn-premium p-2 text-xs w-full" onClick={() => setIsMenuOpen(false)}>Get Started</HashLink>
               </div>
             </div>
