@@ -76,7 +76,7 @@ const Testimonials = () => {
           <div className="inline-block px-4 py-2 bg-accent-orange/10 text-accent-orange rounded-full text-sm font-medium mb-4">
             Client Testimonials
           </div>
-          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-heading font-bold mb-6">
             What Our Clients
             <span className="block text-accent-orange">Say About Us</span>
           </h2>

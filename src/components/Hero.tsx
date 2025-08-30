@@ -26,7 +26,7 @@ const Hero = () => {
 
             {/* Main Heading */}
             <div className="space-y-6">
-              <h1 className="text-2xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight  text-gradient-premium">
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold leading-tight  text-gradient-premium">
                 Powering Your Ideas with Words, Code & eCommerce
               </h1>
               <p className="text-sm lg:text-xl text-gray-900/70 leading-relaxed max-w-3xl mx-auto">

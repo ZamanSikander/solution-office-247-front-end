@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
             <Sparkles className="h-4 w-4 mr-2" />
             Why Choose Solution Office 24/7
           </div>
-          <h2 className="text-2xl sm:text-5xl lg:text-6xlfont-display font-bold mb-8 text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-8 text-balance">
             Built for Excellence,
             <span className="block text-gradient-premium">Delivered with Care</span>
           </h2>

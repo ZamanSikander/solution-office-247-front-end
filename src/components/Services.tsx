@@ -128,7 +128,7 @@ const Services = () => {
             <Sparkles className="h-4 w-4 mr-2" />
             Our Premium Services
           </div>
-          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-display font-bold mb-8 text-balance">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-8 text-balance">
             Comprehensive Solutions for
             <span className="block m-1 text-gradient-premium">Every Digital Need</span>
           </h2>

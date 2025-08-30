@@ -5,7 +5,6 @@ import { HashLink } from 'react-router-hash-link';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { Link } from 'react-router-dom';
-import logo6 from '@/assets/logo6.png';
 import logo6_1 from "@/assets/logo6_1.webp"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

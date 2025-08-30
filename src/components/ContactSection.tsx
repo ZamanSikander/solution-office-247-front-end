@@ -39,7 +39,7 @@ const Contact = () => {
           <div className="inline-block px-4 py-2 bg-accent-lilac/10 text-accent-lilac rounded-full text-sm font-medium mb-4">
             Get In Touch
           </div>
-          <h2 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-heading font-bold mb-6">
             Ready to Start Your
             <span className="block text-accent-lilac">Next Project?</span>
           </h2>
