@@ -158,9 +158,15 @@ const Header = () => {
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-primary"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"} // 👈 Dynamic label
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />   // 👈 Hide decorative icons
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
             </Button>
+
           </div>
         </div>
 
