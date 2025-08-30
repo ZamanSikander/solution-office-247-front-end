@@ -66,7 +66,7 @@ const Testimonials = () => {
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, []);
+  });
 
   return (
     <section id="testimonials" className="py-20 bg-muted/30">
