@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const ecommerceServices = [
-    {name: "E-Commerce Services", href: '/services/pages/ecommerce'},
+    { name: "E-Commerce Services", href: '/services/pages/ecommerce' },
     { name: 'Ebay Services', href: '/services/ebay-services' },
     { name: 'Walmart Services', href: '/services/walmart-services' },
     { name: 'Tiktok Services', href: '/services/tiktok-services' },
@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="text-2xl font-heading font-bold mb-4">
               Solution Office 24/7
             </div>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
+            <p className="mb-6 leading-relaxed">
               Your trusted partner for academic writing, front-end development,
               and eCommerce solutions. Quality work delivered 24/7.
             </p>
@@ -82,7 +82,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={service.href}
-                    className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
+                    className="text-sm"
                   >
                     {service.name}
                   </Link>
@@ -99,7 +99,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={service.href}
-                    className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
+                    className="text-sm"
                   >
                     {service.name}
                   </Link>
@@ -117,7 +117,7 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={service.href}
-                    className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
+                    className="text-sm"
                   >
                     {service.name}
                   </Link>
@@ -139,7 +139,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="text-primary-foreground/80 hover:text-accent-orange transition-colors duration-200 text-sm"
+                      className="text-sm"
                     >
                       {link.name}
                     </Link>
@@ -151,7 +151,7 @@ const Footer = () => {
             {/* Newsletter & Social */}
             <div className="lg:col-span-3">
               <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
-              <p className="text-primary-foreground/80 text-sm mb-4">
+              <p className=" text-sm mb-4">
                 Subscribe to our newsletter for updates and tips.
               </p>
 
@@ -159,8 +159,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-3 py-2 rounded-l-md bg-background/10 border border-background/20 text-primary-foreground placeholder-primary-foreground/60 text-sm focus:outline-none focus:ring-2 focus:ring-accent-orange"
+                  className="flex-1 px-3 py-2 rounded-l-md border border-background/20 text-sm focus:outline-none focus:ring-2 focus:ring-accent-orange text-gray-600"
                 />
+
                 <button className="px-2 lg:px-4 py-2 bg-accent-orange hover:bg-accent-orange-light transition-colors rounded-r-md text-white text-sm font-medium">
                   Subscribe
                 </button>
@@ -191,14 +192,14 @@ const Footer = () => {
       <div className="border-t border-background/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-primary-foreground/80 mb-4 md:mb-0">
+            <div className="text-sm mb-4 md:mb-0">
               © 2024 Office 24/7. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy-policy" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
+              <Link to="/privacy-policy">
                 Privacy Policy
               </Link>
-              <Link to="/terms-of-service" className="text-primary-foreground/80 hover:text-accent-orange transition-colors">
+              <Link to="/terms-of-service">
                 Terms of Service
               </Link>
             </div>

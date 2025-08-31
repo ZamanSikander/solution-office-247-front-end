@@ -152,13 +152,16 @@ const Testimonials = () => {
             <div className="flex space-x-2">
               {testimonials.map((_, index) => (
                 <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-primary' : 'bg-muted'
-                    }`}
-                  aria-label={`Go to slide ${index + 1}`} // 👈 Makes it descriptive
-                  aria-current={index === currentSlide ? "true" : "false"} // 👈 Indicates active slide
-                />
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-6 h-6 flex items-center justify-center rounded-full transition-colors mx-1 
+                  ${index === currentSlide ? 'bg-primary' : 'bg-muted/'}`}
+                aria-label={`Go to slide ${index + 1}`} 
+                aria-current={index === currentSlide ? "true" : "false"}
+              >
+                <span className="sr-only">Slide {index + 1}</span>
+              </button>
+              
 
               ))}
             </div>
