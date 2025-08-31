@@ -1,6 +1,9 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import Menu from 'lucide-react/dist/esm/icons/menu';
+import X from 'lucide-react/dist/esm/icons/x';
+import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
+
 import { HashLink } from 'react-router-hash-link';
 import { Button } from '@/components/ui/button';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
@@ -56,7 +59,7 @@ const Header = () => {
                 alt="Solution Office Logo"
                 width="512"
                 height="128"
-                className="w-48 sm:w-56 md:w-64 h-auto"
+                className="w-48 sm:w-56 md:w-64"
               />
 
             </Link>

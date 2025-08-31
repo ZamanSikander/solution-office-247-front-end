@@ -1,7 +1,13 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Code, ShoppingCart, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import BookOpen from 'lucide-react/dist/esm/icons/book-open';
+import Code from 'lucide-react/dist/esm/icons/code';
+import ShoppingCart from 'lucide-react/dist/esm/icons/shopping-cart';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import CheckCircle2 from 'lucide-react/dist/esm/icons/check-circle-2';
+import Sparkles from 'lucide-react/dist/esm/icons/sparkles';
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BrowserRouter } from 'react-router-dom';

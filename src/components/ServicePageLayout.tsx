@@ -2,7 +2,11 @@
 import {useState} from 'react';
 import ChoosePlanModal from './ChoosePlanModal';
 import { HashLink } from 'react-router-hash-link';
-import { ArrowLeft, CheckCircle2, Star, ArrowRight } from 'lucide-react';
+import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
+import CheckCircle2 from 'lucide-react/dist/esm/icons/check-circle-2';
+import Star from 'lucide-react/dist/esm/icons/star';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';

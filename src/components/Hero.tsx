@@ -1,5 +1,9 @@
 
-import { ArrowRight, Play, Star, CheckCircle } from 'lucide-react';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import Play from 'lucide-react/dist/esm/icons/play';
+import Star from 'lucide-react/dist/esm/icons/star';
+import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
+
 import { Button } from '@/components/ui/button';
 
 import { HashLink } from 'react-router-hash-link';
@@ -12,21 +16,33 @@ const Hero = () => {
           <div className="space-y-8 scroll-reveal animate">
             {/* Trust Badge */}
             <div className="flex justify-center">
-              <div className="glass-card px-4 py-2 rounded-full text-white text-sm font-medium">
-                <div className="flex items-center space-x-2">
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <span className='text-yellow-400'>Trusted by 500+ clients</span>
+              <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium backdrop-blur-sm">
+                {/* Pre-rendered stars as static SVG for performance */}
+                <div className="flex items-center space-x-1">
+                  <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
+                  </svg>
+                  <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
+                  </svg>
+                  <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
+                  </svg>
+                  <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
+                  </svg>
+                  <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
+                  </svg>
                 </div>
+                <span className="ml-2 text-yellow-400">Trusted by 500+ clients</span>
               </div>
+
             </div>
 
             {/* Main Heading */}
             <div className="space-y-6">
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold leading-tight  text-gradient-premium">
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight text-gradient-premium">
                 Powering Your Ideas with Words, Code & eCommerce
               </h1>
               <p className="text-sm lg:text-xl text-gray-900/70 leading-relaxed max-w-3xl mx-auto">

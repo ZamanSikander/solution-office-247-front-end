@@ -1,5 +1,12 @@
 
-import { Clock, Shield, Star, Users, Zap, Award, Sparkles } from 'lucide-react';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import Shield from 'lucide-react/dist/esm/icons/shield';
+import Star from 'lucide-react/dist/esm/icons/star';
+import Users from 'lucide-react/dist/esm/icons/users';
+import Zap from 'lucide-react/dist/esm/icons/zap';
+import Award from 'lucide-react/dist/esm/icons/award';
+import Sparkles from 'lucide-react/dist/esm/icons/sparkles';
+
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const WhyChooseUs = () => {
