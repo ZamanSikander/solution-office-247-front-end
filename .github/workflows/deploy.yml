@@ -46,5 +46,4 @@ jobs:
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
           timeout: 120000
-          passive: true
           security: loose
