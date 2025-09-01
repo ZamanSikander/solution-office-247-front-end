@@ -1,35 +1,40 @@
 name: CI/CD — Vite to Hostinger
+env:
+  NODE_OPTIONS: --trace-uncaught
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ] # Change if your main branch is different
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    env:
-      NODE_OPTIONS: --trace-uncaught
-
     steps:
+      # 1. Checkout Code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js (LTS)
+      # 2. Setup Node.js
+      - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # Use LTS for stability
+          node-version: 22
           cache: 'npm'
 
+      # 3. Install Dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4. Build Vite Project
       - name: Build Vite project
         run: npm run build
 
+      # 5. Verify Dist Folder
       - name: Verify dist folder exists
         run: ls -la ./dist/
 
+      # 6. Deploy to Hostinger via FTP
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -41,3 +46,5 @@ jobs:
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
           timeout: 120000
+          passive: true
+          security: loose
