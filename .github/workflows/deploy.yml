@@ -40,3 +40,4 @@ jobs:
           protocol: ftp
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          timeout: 120000
