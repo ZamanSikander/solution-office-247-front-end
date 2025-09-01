@@ -8,14 +8,18 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_OPTIONS: --trace-uncaught
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Setup Node.js (LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 18 # Use LTS for stability
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
