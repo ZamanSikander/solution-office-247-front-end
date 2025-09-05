@@ -82,7 +82,7 @@ const Header = () => {
                 Home
               </Link>
               <Link to="/services/pages/ecommerce" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
-                VA for E-commerce
+                E-commerce
               </Link>
               <Link to="/services/pages/frontend" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
                 Web Development
