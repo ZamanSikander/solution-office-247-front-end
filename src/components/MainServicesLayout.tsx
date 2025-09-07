@@ -137,10 +137,10 @@ const MainServicesLayout: React.FC<MainServicesLayoutProps> = ({
             {hero.eyebrow}
           </div>
         )}
-        <h1 className="text-2xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight text-gradient-premium">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight text-gradient-premium">
           {hero.title}
         </h1>
-        <p className="text-sm mt-7 lg:text-xl text-gray-900/70 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-sm mt-7 lg:text-xl text-gray-900/60 leading-relaxed max-w-3xl mx-auto">
           {hero.intro}
         </p>
         {hero.actions && <div className="mt-8 flex flex-wrap justify-center gap-2">{hero.actions}</div>}

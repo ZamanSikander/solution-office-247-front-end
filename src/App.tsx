@@ -28,8 +28,8 @@ import AmazonServices from "./pages/services/AmazonServices";
 import ShopifyServices from "./pages/services/ShopifyServices";
 import ScheduleConsultation from "./pages/services/ScheduleConsultation";
 import Ecommerce from "./pages/services/Ecommerce";
-// import FrontEnd from "./pages/services/FrontEnd";
-// import AcademicsWriting from "./pages/services/AcademicsWriting";
+import FrontEnd from "./pages/services/FrontEnd";
+import AcademicsWriting from "./pages/services/AcademicsWriting";
 
 const queryClient = new QueryClient();
 
@@ -53,8 +53,8 @@ const AppRoutes = () => {
 
         {/* Main services */}
         <Route path="/ecommerce" element={<Ecommerce />} />
-        {/* <Route path="/services/pages/frontend" element={<FrontEnd />} /> */}
-        {/* <Route path="/services/pages/academicswriting" element={<AcademicsWriting />} /> */}
+        { <Route path="/frontend" element={<FrontEnd />} /> }
+        {<Route path="/academicswriting" element={<AcademicsWriting />} /> }
 
         {/* Development Services */}
         <Route path="/services/react-development" element={<ReactDevelopment />} />
