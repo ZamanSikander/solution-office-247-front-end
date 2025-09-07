@@ -43,7 +43,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
             <Link to="/" className="nav-link px-4 py-2 text-sm">Home</Link>
-            <Link to="/services/pages/ecommerce" className="nav-link px-4 py-2  text-sm">E-commerce</Link>
+            <Link to="/ecommerce" className="nav-link px-4 py-2  text-sm">E-commerce</Link>
             <Link to="/services/pages/frontend" className="nav-link px-4 py-2 text-sm">Web Development</Link>
             <Link to="/services/pages/academicswriting" className="nav-link py-2 text-sm">Academics Writing</Link>
             <Link to="/about" className="nav-link px-4 py-2 text-sm">About</Link>

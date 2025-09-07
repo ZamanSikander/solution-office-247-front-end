@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const ecommerceServices = [
-    { name: "E-Commerce Services", href: '/services/pages/ecommerce' },
+    { name: "E-Commerce Services", href: '/ecommerce' },
     { name: 'Ebay Services', href: '/services/ebay-services' },
     { name: 'Walmart Services', href: '/services/walmart-services' },
     { name: 'Tiktok Services', href: '/services/tiktok-services' },
