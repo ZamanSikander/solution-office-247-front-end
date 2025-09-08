@@ -23,7 +23,7 @@ export default function FrontEnd() {
           eyebrow: "Front-End Development",
           title: "Professional Front-End Development Services",
           intro:
-            "At Solution Office 247, we deliver front end development services that combine creativity, performance, and usability. From startups to enterprises, our team builds responsive, user-friendly interfaces using best practices for responsive web design—ensuring your site looks great and performs flawlessly on every device.",
+            "At Solution Office 24/7, we deliver front end development services that combine creativity, performance, and usability. From startups to enterprises, our team builds responsive, user-friendly interfaces using best practices for responsive web design—ensuring your site looks great and performs flawlessly on every device.",
           actions: (
             <>
               <a href="#what-we-do" className="btn-premium text-md group flex justify-center items-center gap-3">

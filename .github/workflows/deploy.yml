@@ -44,6 +44,6 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           protocol: ftp
           local-dir: ./dist/
-          server-dir: public_html/ 
+          server-dir: / 
           timeout: 120000
           security: loose

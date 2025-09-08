@@ -13,7 +13,7 @@ export default function AcademicsWriting() {
         <title>Academic Writing Services | Professional Essay, Dissertation & Thesis Help</title>
         <meta
           name="description"
-          content="Get expert academic writing services with SolutionOffice247. We provide professional essay help, dissertation writing services, and thesis support—plagiarism-free, affordable, and always delivered on time."
+          content="Get expert academic writing services with Solution Office 24/7. We provide professional essay help, dissertation writing services, and thesis support—plagiarism-free, affordable, and always delivered on time."
         />
         <link rel="canonical" href="https://solutionoffice247.com/academicswriting" />
       </Helmet>
@@ -23,7 +23,7 @@ export default function AcademicsWriting() {
           eyebrow: "Academics Writing",
           title: "Professional Academic Writing Services for Students & Researchers",
           intro:
-            "At Solution Office 247, we provide reliable academic writing services including essays, dissertations, and thesis support. Our expert writers deliver original, plagiarism-free work tailored to meet academic standards—on time, every time.",
+            "At Solution Office 24/7, we provide reliable academic writing services including essays, dissertations, and thesis support. Our expert writers deliver original, plagiarism-free work tailored to meet academic standards—on time, every time.",
             actions: (
               <>
                 <a href="#what-we-do" className="btn-premium text-md group flex justify-center items-center gap-3">
