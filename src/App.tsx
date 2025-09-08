@@ -52,9 +52,9 @@ const AppRoutes = () => {
         <Route path="/services/editing-proofreading" element={<EditingProofreading />} />
 
         {/* Main services */}
-        <Route path="/services/pages/ecommerce" element={<Ecommerce />} />
-        <Route path="/services/pages/frontend" element={<FrontEnd />} />
-        <Route path="/services/pages/academicswriting" element={<AcademicsWriting />} />
+        <Route path="/ecommerce" element={<Ecommerce />} />
+        { <Route path="/frontend" element={<FrontEnd />} /> }
+        {<Route path="/academicswriting" element={<AcademicsWriting />} /> }
 
         {/* Development Services */}
         <Route path="/services/react-development" element={<ReactDevelopment />} />
