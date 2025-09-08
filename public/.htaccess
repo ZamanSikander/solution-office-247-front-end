@@ -4,3 +4,8 @@ RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
+
+# Example redirects
+Redirect 301 /services/pages/frontend /frontend
+Redirect 301 /services/pages/academicswriting /academicswriting
+Redirect 301 /services/pages/ecommerce /ecommerce

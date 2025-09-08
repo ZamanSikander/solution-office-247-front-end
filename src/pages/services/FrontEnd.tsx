@@ -12,7 +12,7 @@ export default function FrontEnd() {
         <title>Front-End Development Services | Responsive Web Development Company</title>
         <meta
           name="description"
-          content="SolutionOffice247 delivers professional front end development services—from responsive web design to full stack development. Partner with a trusted front end development company for scalable, SEO-friendly, and user-focused web solutions."
+          content="Solution Office 24/7 delivers professional front end development services—from responsive web design to full stack development. Partner with a trusted front end development company for scalable, SEO-friendly, and user-focused web solutions."
         />
         <link rel="canonical" href="https://solutionoffice247.com/frontend" />
       </Helmet>
