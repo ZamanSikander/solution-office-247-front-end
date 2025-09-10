@@ -9,3 +9,8 @@ RewriteRule . /index.html [L]
 Redirect 301 /services/pages/frontend /frontend
 Redirect 301 /services/pages/academicswriting /academicswriting
 Redirect 301 /services/pages/ecommerce /ecommerce
+
+# Redirect all HTTP to HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
