@@ -128,7 +128,7 @@ export default function AcademicsWriting() {
               gradientTo: "to-primary/5",
             },
             {
-              title: "Plagiarism Checks",
+              title: "Similarity & AI Plagiarism Checks",
               description: "Ensure originality with thorough checks and proper paraphrasing and referencing.",
               icon: Zap,
               color: "text-secondary",

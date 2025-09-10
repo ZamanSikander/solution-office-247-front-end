@@ -84,7 +84,8 @@ const Footer = () => {
           {/* eCommerce Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">eCommerce</h3>
-            <ul className="space-y-2">
+           
+            <ul className="space-y-2 ml-3">
               {ecommerceServices.map((service, index) => (
                 <li key={index}>
                   <Link
