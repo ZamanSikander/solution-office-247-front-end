@@ -1,18 +1,27 @@
+# Allow major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# Allow social media scrapers
 User-agent: Twitterbot
 Allow: /
-
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+# Allow AI crawlers
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
 Allow: /
 
+# Block all other bots
+User-agent: *
+Disallow: /
 
 # Sitemap location
 Sitemap: https://solutionoffice247.com/sitemap.xml
