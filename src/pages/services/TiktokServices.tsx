@@ -38,30 +38,44 @@ const TiktokServices = () => {
 
   const pricing = [
     {
-      plan: "Starter",
-      price: "$300/month",
+      plan: "Standard",
+      price: "$100",
       features: [
-        "Shop setup",
-        "10 product listings",
-        "basic ads"
+        "Product Hunting",
+        "List Creation",
+        "List Optimization",
+        "Order Management"
       ]
     },
     {
-      plan: "Growth",
-      price: "$600/month",
+      plan: "Premium",
+      price: "$300",
       features: [
-        "20 product listings",
-        "influencer outreach",
-        "advanced ads"
+        "Product Hunting",
+        "List Creation",
+        "List Optimization",
+        "Order Management",
+        "Ad Management",
+        "Customer Care",
+        "Store Optimization",
+        "Financial Statement"
       ]
     },
     {
-      plan: "Pro",
-      price: "$1,000/month",
+      plan: "Ultimate",
+      price: "$500",
       features: [
-        "Unlimited listings",
-        "content creation package",
-        "premium analytics"
+        "Product Hunting",
+        "List Creation",
+        "List Optimization",
+        "Order Management",
+        "Ad Management",
+        "Customer Care",
+        "Store Optimization",
+        "Financial Statement",
+        "Store Health",
+        "Reverse the negative reviews",
+        "Cost Optimization"
       ]
     }
   ];

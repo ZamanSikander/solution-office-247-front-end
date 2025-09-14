@@ -39,31 +39,43 @@ const ResearchPapers = () => {
   const pricing = [
     {
       plan: "Standard",
-      price: "$150",
+      price: "$100",
       features: [
-        " Basic listing optimization (up to 20 products)",
-        "SEO tweaks",
-        "monthly report"
+        "Product Hunting",
+        "List Creation",
+        "List Optimization",
+        "Order Management"
       ]
     },
     {
       plan: "Premium",
       price: "$300",
       features: [
-        "Up to 50 optimized listings",
-        "competitor research",
-        "store branding",
-        "ongoing updates"
+        "Product Hunting",
+        "List Creation",
+        "List Optimization",
+        "Order Management",
+        "Ad Management",
+        "Customer Care",
+        "Store Optimization",
+        "Financial Statement"
       ]
     },
     {
       plan: "Ultimate",
       price: "$500",
       features: [
-        "Unlimited product optimization",
-        "store redesign",
-        "monthly strategy calls",
-        "premium support"
+        "Product Hunting",
+        "List Creation",
+        "List Optimization",
+        "Order Management",
+        "Ad Management",
+        "Customer Care",
+        "Store Optimization",
+        "Financial Statement",
+        "Store Health",
+        "Reverse the negative reviews",
+        "Cost Optimization"
       ]
     }
   ];
