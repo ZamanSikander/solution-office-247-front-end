@@ -75,6 +75,16 @@ const AmazonServices = () => {
   return (
     <div>
       <Helmet>
+        {/* Meta Title */}
+        <title>
+          Amazon Digital & Product Listing Services | Store Management & VA Support
+        </title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Discover Amazon digital services, product listing optimization, and store management solutions. From handling Amazon digital service charges to expert virtual assistant support, we help you grow your business on Amazon with proven strategies."
+        />
         <link rel="canonical" href="https://solutionoffice247.com/services/amazon-services" />
       </Helmet>
       <Header />
