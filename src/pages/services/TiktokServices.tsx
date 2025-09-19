@@ -89,6 +89,16 @@ const TiktokServices = () => {
   return (
     <div>
       <Helmet>
+        {/* Meta Title */}
+        <title>
+        Boost Your Sales with TikTok Shop experts marketers. 
+        </title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Boost your brand with expert TikTok Shop management services. From product listing and content creation to ads optimization, we help you grow sales and reach more customers on TikTok."
+        />
         <link rel="canonical" href="https://solutionoffice247.com/services/tiktok-services" />
       </Helmet>
       <Header />

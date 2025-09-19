@@ -75,6 +75,16 @@ const ShopifyServices = () => {
   return (
     <div>
       <Helmet>
+        {/* Meta Title */}
+        <title>
+        Top Shopify Store Management Agency for Efficient Scaling. 
+        </title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Enhance your Shopify store's performance with expert management services. Drive growth and sales with a trusted Shopify store management agency"
+        />
         <link rel="canonical" href="https://solutionoffice247.com/services/shopify-services" />
       </Helmet>
       <Header />

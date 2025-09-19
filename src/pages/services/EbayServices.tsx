@@ -89,6 +89,16 @@ const ResearchPapers = () => {
   return (
     <div>
       <Helmet>
+      {/* Meta Title */}
+      <title>
+      Top Ebay Store Management Services to Boost Sales
+        </title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Maximize your sales with expert Ebay store management services. Let us help you optimize and grow your business."
+        />
         <link rel="canonical" href="https://solutionoffice247.com/services/ebay-services" />
       </Helmet>
       <Header />
