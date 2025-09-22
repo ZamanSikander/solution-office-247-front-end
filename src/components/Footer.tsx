@@ -40,7 +40,7 @@ const Footer = () => {
     { name: "About Us", href: "/about" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "/pages/contact" },
-    { name: "Blog", href: "#" }
+    { name: "Blog", href: "/blog" }
   ];
 
   const socialLinks = [
