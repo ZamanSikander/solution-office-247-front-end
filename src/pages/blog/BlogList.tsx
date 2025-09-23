@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { client } from "@/services/sanityClient";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -22,6 +23,11 @@ const BlogList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+       <Helmet>
+        <title>Blog- Solution Office 24/7</title>
+        <meta name="description" content="Explore expert articles, tips, and guides from Solution Office 247 on ecommerce strategies, front-end development trends, and academic writing solutions. Stay updated with industry insights and practical advice to grow your projects and skills." />
+        <link rel="canonical" href="https://solutionoffice247.com/blog" />
+      </Helmet>
       <Header />
       {/* Hero Section */}
       <section className="relative mt-20 py-10 md:py-20 pb-16 bg-gradient-hero bg-mesh">

@@ -157,7 +157,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Us - Solution Office 247</title>
+        <title>Contact Us - Solution Office 24/7</title>
         <meta name="description" content="Get in touch with Solution Office 247..." />
         <link rel="canonical" href="https://solutionoffice247.com/pages/contact" />
       </Helmet>
