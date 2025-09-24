@@ -81,7 +81,7 @@ const Header = () => {
               <Link to="/" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
                 Home
               </Link>
-              <Link to="ecommerce" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/ecommerce" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
                 E-commerce
               </Link>
               <Link to="/frontend" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
