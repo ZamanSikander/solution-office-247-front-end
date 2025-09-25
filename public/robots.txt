@@ -1,14 +1,36 @@
-# Allow major search engines
+# ============================
+# Robots.txt for solutionoffice247.com
+# ============================
+
+# Allow all major search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
 # Allow social media scrapers
 User-agent: Twitterbot
 Allow: /
 User-agent: facebookexternalhit
+Allow: /
+
+# Allow SEO crawlers
+User-agent: AhrefsBot
+Allow: /
+User-agent: SemrushBot
 Allow: /
 
 # Allow AI crawlers
@@ -19,9 +41,19 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Block all other bots
-User-agent: *
+# Block only known spammy bots
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: PetalBot
+Disallow: /
+User-agent: CCBot
 Disallow: /
 
-# Sitemap location
+# Default: allow everyone else
+User-agent: *
+Allow: /
+
+# Sitemap location (important for SEO)
 Sitemap: https://solutionoffice247.com/sitemap.xml
