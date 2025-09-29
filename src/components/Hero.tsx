@@ -5,6 +5,8 @@ import Star from 'lucide-react/dist/esm/icons/star';
 import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
 
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Link } from 'react-router-dom';
 
 import { HashLink } from 'react-router-hash-link';
 const Hero = () => {
@@ -86,6 +88,48 @@ const Hero = () => {
                 </Button>
 
               </HashLink>
+              {/* <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    className="btn-premium text-lg group"
+                    aria-label="Open portfolio modal"
+                  >
+                    <span>Our Portfolio</span>
+                    <ArrowRight
+                      className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+                      aria-hidden="true"
+                    />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle className="font-display text-gradient-premium">Explore Our Portfolio</DialogTitle>
+                    <DialogDescription>
+                      Browse selected work from our core service areas.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="mt-2 grid grid-cols-1 gap-3">
+                    <Link to="/portfolio/ecommerce" className="w-full">
+                      <Button variant="outline" className="w-full justify-between btn-outline-premium group">
+                        <span>E-commerce Portfolio</span>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </Button>
+                    </Link>
+                    <Link to="/portfolio/frontend-development" className="w-full">
+                      <Button variant="outline" className="w-full justify-between btn-outline-premium group">
+                        <span>Front-end Development Portfolio</span>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </Button>
+                    </Link>
+                    <Link to="/portfolio/academic" className="w-full">
+                      <Button variant="outline" className="w-full justify-between btn-outline-premium group">
+                        <span>Academic Portfolio</span>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </Button>
+                    </Link>
+                  </div>
+                </DialogContent>
+              </Dialog> */}
             </div>
 
             {/* Stats */}
