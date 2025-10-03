@@ -1,7 +1,5 @@
 
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
-import Play from 'lucide-react/dist/esm/icons/play';
-import Star from 'lucide-react/dist/esm/icons/star';
 import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';
 
 import { Button } from '@/components/ui/button';
@@ -88,7 +86,7 @@ const Hero = () => {
                 </Button>
 
               </HashLink>
-              {/* <Dialog>
+             <Dialog>
                 <DialogTrigger asChild>
                   <Button
                     className="btn-premium text-lg group"
@@ -129,7 +127,7 @@ const Hero = () => {
                     </Link>
                   </div>
                 </DialogContent>
-              </Dialog> */}
+              </Dialog> 
             </div>
 
             {/* Stats */}
