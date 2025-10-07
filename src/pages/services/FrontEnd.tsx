@@ -54,7 +54,7 @@ export default function FrontEnd() {
               bgColor: "bg-accent-coral/10",
               gradientFrom: "from-accent-coral/20",
               gradientTo: "to-accent-coral/5",
-              link: "/services/amazon-services",
+              link: "/services/react-development",
             },
             {
               title: "Responsive UI Design",
@@ -64,7 +64,7 @@ export default function FrontEnd() {
               bgColor: "bg-accent-teal/10",
               gradientFrom: "from-accent-teal/20",
               gradientTo: "to-accent-teal/5",
-              link: "/services/shopify-services",
+              link: "/services/responsive-design",
             },
             {
               title: "Motion & Animation Design",
@@ -74,7 +74,7 @@ export default function FrontEnd() {
               bgColor: "bg-accent-lilac/10",
               gradientFrom: "from-accent-lilac/20",
               gradientTo: "to-accent-lilac/5",
-              link: "/services/tiktok-services",
+              link: "/services/animation-design",
             },
             {
               title: "WordPress Development",
@@ -84,7 +84,7 @@ export default function FrontEnd() {
               bgColor: "bg-primary/10",
               gradientFrom: "from-primary/20",
               gradientTo: "to-primary/5",
-              link: "/services/walmart-services",
+              link: "/services/wordpress-development",
             },
           ],
         }}
