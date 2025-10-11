@@ -219,7 +219,7 @@ const TermsOfService = () => {
                 </p>
                 <div className="bg-neutral-50 p-6 rounded-2xl">
                   <div className="space-y-2 text-neutral-700">
-                    <p><strong>Email:</strong> legal@solutionoffice247.com</p>
+                    <p><strong>Email:</strong>solutionoffice247@gmail.com</p>
                     <p><strong>Phone:</strong> +92-323-6180902</p>
                     <p><strong>Address:</strong> Global Service Available</p>
                     <p><strong>Business Hours:</strong> 24/7 Support Available</p>

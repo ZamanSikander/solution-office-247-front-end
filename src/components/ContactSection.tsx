@@ -12,7 +12,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@solutionoffice247.com",
+      content: "solutionoffice247@gmail.com",
       description: "Send us an email anytime"
     },
     {
