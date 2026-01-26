@@ -32,7 +32,7 @@ import ScheduleConsultation from "./pages/services/ScheduleConsultation";
 import Ecommerce from "./pages/services/Ecommerce";
 import FrontEnd from "./pages/services/FrontEnd";
 import AcademicsWriting from "./pages/services/AcademicsWriting";
-
+import EcommercePortfolio from "./Portfolio/ecommerPortfolio";
 const queryClient = new QueryClient();
 
 const AppRoutes = () => {
@@ -40,48 +40,48 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      
-        <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pages/contact" element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
 
-        {/* Blog Routes */}
-        <Route path="/blog" element={<BlogList />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/" element={<Index />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/pages/contact" element={<Contact />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/portfolio/ecommerce" element={<EcommercePortfolio />} />
+      {/* Blog Routes */}
+      <Route path="/blog" element={<BlogList />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
 
-        {/* Academic Writing Services */}
-        <Route path="/services/research-papers" element={<ResearchPapers />} />
-        <Route path="/services/thesis-dissertation" element={<ThesisDissertation />} />
-        <Route path="/services/essay-assignments" element={<EssayAssignments />} />
-        <Route path="/services/editing-proofreading" element={<EditingProofreading />} />
+      {/* Academic Writing Services */}
+      <Route path="/services/research-papers" element={<ResearchPapers />} />
+      <Route path="/services/thesis-dissertation" element={<ThesisDissertation />} />
+      <Route path="/services/essay-assignments" element={<EssayAssignments />} />
+      <Route path="/services/editing-proofreading" element={<EditingProofreading />} />
 
-        {/* Main services */}
-        <Route path="/ecommerce" element={<Ecommerce />} />
-        { <Route path="/frontend" element={<FrontEnd />} /> }
-        {<Route path="/academicswriting" element={<AcademicsWriting />} /> }
+      {/* Main services */}
+      <Route path="/ecommerce" element={<Ecommerce />} />
+      {<Route path="/frontend" element={<FrontEnd />} />}
+      {<Route path="/academicswriting" element={<AcademicsWriting />} />}
 
-        {/* Development Services */}
-        <Route path="/services/react-development" element={<ReactDevelopment />} />
-        <Route path="/services/responsive-design" element={<ResponsiveUi />} />
-        <Route path="/services/animation-design" element={<AnimationDesign />} />
-        <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
+      {/* Development Services */}
+      <Route path="/services/react-development" element={<ReactDevelopment />} />
+      <Route path="/services/responsive-design" element={<ResponsiveUi />} />
+      <Route path="/services/animation-design" element={<AnimationDesign />} />
+      <Route path="/services/wordpress-development" element={<WordPressDevelopment />} />
 
-        {/* Ecommerce services */}
-        <Route path="/services/ebay-services" element={<EbayServices />} />
-        <Route path="/services/walmart-services" element={<WalmartServices />} />
-        <Route path="/services/tiktok-services" element={<TiktokServices />} />
-        <Route path="/services/amazon-services" element={<AmazonServices />} />
-        <Route path="/services/shopify-services" element={<ShopifyServices />} />
+      {/* Ecommerce services */}
+      <Route path="/services/ebay-services" element={<EbayServices />} />
+      <Route path="/services/walmart-services" element={<WalmartServices />} />
+      <Route path="/services/tiktok-services" element={<TiktokServices />} />
+      <Route path="/services/amazon-services" element={<AmazonServices />} />
+      <Route path="/services/shopify-services" element={<ShopifyServices />} />
 
-        {/* Misc */}
-        <Route path="/services" element={<Services />} />
-        <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
+      {/* Misc */}
+      <Route path="/services" element={<Services />} />
+      <Route path="/schedule-consultation" element={<ScheduleConsultation />} />
 
-        {/* Catch-all */}
-        <Route path="*" element={<NotFound />} />
-      
+      {/* Catch-all */}
+      <Route path="*" element={<NotFound />} />
+
     </Routes>
   );
 };
@@ -97,7 +97,7 @@ const App = () => (
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
-    </HelmetProvider>
+  </HelmetProvider>
 );
 
 export default App;

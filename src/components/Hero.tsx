@@ -86,7 +86,9 @@ const Hero = () => {
                 </Button>
 
               </HashLink>
-             <Dialog>
+
+              {/* portfolio section */}
+              <Dialog>
                 <DialogTrigger asChild>
                   <Button
                     className="btn-premium text-lg group"
@@ -127,7 +129,7 @@ const Hero = () => {
                     </Link>
                   </div>
                 </DialogContent>
-              </Dialog> 
+              </Dialog>
             </div>
 
             {/* Stats */}
