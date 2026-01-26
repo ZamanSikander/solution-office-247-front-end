@@ -19,9 +19,7 @@ const Hero = () => {
               <div className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium backdrop-blur-sm">
                 {/* Pre-rendered stars as static SVG for performance */}
                 <div className="flex items-center space-x-1">
-                  <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
-                  </svg>
+                  
                   <svg className="w-4 h-4 text-yellow-400 fill-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M12 2l2.9 6.9 7.6.6-5.7 4.9 1.8 7.5L12 17.8l-6.6 4.1 1.8-7.5L1.5 9.5l7.6-.6L12 2z" />
                   </svg>
