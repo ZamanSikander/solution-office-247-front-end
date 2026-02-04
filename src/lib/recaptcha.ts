@@ -13,9 +13,9 @@ declare global {
 let recaptchaScriptLoadingPromise: Promise<void> | null = null;
 
 const getSiteKey = (): string => {
-	const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string | undefined;
+	const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string | undefined;
 	if (!siteKey) {
-		throw new Error("Missing VITE_RECAPTCHA_SITE_KEY in environment");
+		throw new Error("Missing NEXT_PUBLIC_RECAPTCHA_SITE_KEY in environment");
 	}
 	return siteKey;
 };

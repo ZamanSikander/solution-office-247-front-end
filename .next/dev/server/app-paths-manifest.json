@@ -1,0 +1,7 @@
+{
+  "/academicswriting/page": "app/academicswriting/page.js",
+  "/ecommerce/page": "app/ecommerce/page.js",
+  "/frontend/page": "app/frontend/page.js",
+  "/page": "app/page.js",
+  "/schedule-consultation/page": "app/schedule-consultation/page.js"
+}

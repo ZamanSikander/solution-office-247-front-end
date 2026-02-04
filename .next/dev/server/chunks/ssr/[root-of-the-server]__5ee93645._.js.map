@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 20, "column": 0}, "map": {"version":3,"sources":["file:///E:/projects/solution-office-247-front-end/src/lib/sanityClient.ts"],"sourcesContent":["import { createClient } from \"@sanity/client\";\r\n\r\nexport const client = createClient({\r\n  projectId: \"8lftwkge\", // find in sanity.json or project dashboard\r\n  dataset: \"production\",\r\n  apiVersion: \"2025-09-09\", // use today’s date\r\n  useCdn: true, // `true` = faster, cached reads\r\n});\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,MAAM,SAAS,IAAA,8LAAY,EAAC;IACjC,WAAW;IACX,SAAS;IACT,YAAY;IACZ,QAAQ;AACV"}},
+    {"offset": {"line": 36, "column": 0}, "map": {"version":3,"sources":["file:///E:/projects/solution-office-247-front-end/src/app/blog/%5Bslug%5D/page.tsx"],"sourcesContent":["import { client } from \"@/lib/sanityClient\";\r\nimport BlogPost from \"@/components/BlogPost\";\r\n\r\nconst BLOG_QUERY = `\r\n  *[_type == \"post\" && slug.current == $slug][0] {\r\n    title,\r\n    body,\r\n    mainImage,\r\n    publishedAt\r\n  }\r\n`;\r\n\r\nexport default async function BlogPostPage({ params }: any) {\r\n  const blog = await client.fetch(BLOG_QUERY, {\r\n    slug: params.slug,\r\n  });\r\n\r\n  return {\r\n    title: blog.title,\r\n    description: blog.body,\r\n  };\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAGA,MAAM,aAAa,CAAC;;;;;;;AAOpB,CAAC;AAEc,eAAe,aAAa,EAAE,MAAM,EAAO;IACxD,MAAM,OAAO,MAAM,oIAAM,CAAC,KAAK,CAAC,YAAY;QAC1C,MAAM,OAAO,IAAI;IACnB;IAEA,OAAO;QACL,OAAO,KAAK,KAAK;QACjB,aAAa,KAAK,IAAI;IACxB;AACF"}}]
+}

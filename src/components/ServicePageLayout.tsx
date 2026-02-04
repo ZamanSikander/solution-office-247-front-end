@@ -1,20 +1,20 @@
-
-import {useState} from 'react';
-import ChoosePlanModal from './ChoosePlanModal';
-import { HashLink } from 'react-router-hash-link';
-import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
-import CheckCircle2 from 'lucide-react/dist/esm/icons/check-circle-2';
-import Star from 'lucide-react/dist/esm/icons/star';
-import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
-
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+"use client";
+import { useState } from "react";
+import ChoosePlanModal from "./ChoosePlanModal";
+import ArrowLeft from "lucide-react/dist/esm/icons/arrow-left";
+import CheckCircle2 from "lucide-react/dist/esm/icons/check-circle-2";
+import Star from "lucide-react/dist/esm/icons/star";
+import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
+import BookOpen from "lucide-react/dist/esm/icons/book-open";
+import Code from "lucide-react/dist/esm/icons/code";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 interface ServicePageProps {
   title: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: string | React.ElementType; // Can be a string key or a React component
   color: string;
   bgColor: string;
   HbgColor: string;
@@ -23,6 +23,12 @@ interface ServicePageProps {
   pricing?: { plan: string; price: string; features: string[] }[];
   testimonial?: { name: string; role: string; content: string };
 }
+
+const iconMap: Record<string, React.ElementType> = {
+  bookOpen: BookOpen,
+  "book-open": BookOpen,
+  code: Code,
+};
 
 const ServicePageLayout: React.FC<ServicePageProps> = ({
   title,
@@ -34,17 +40,22 @@ const ServicePageLayout: React.FC<ServicePageProps> = ({
   features,
   process,
   pricing,
-  testimonial
+  testimonial,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-const [selectedPlan, setSelectedPlan] = useState('');
-const [selectedService, setSelectedService] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedService, setSelectedService] = useState("");
 
-const handleChoosePlan = (planName: string, serviceName: string) => {
-  setSelectedPlan(planName);
-  setSelectedService(serviceName);
-  setIsModalOpen(true);
-};
+  const handleChoosePlan = (planName: string, serviceName: string) => {
+    setSelectedPlan(planName);
+    setSelectedService(serviceName);
+    setIsModalOpen(true);
+  };
+
+  // Resolve the icon component:
+  // 1. If 'icon' is a string, look it up in iconMap
+  // 2. If 'icon' is a React component (function), use it directly
+  const IconComponent = typeof Icon === "string" ? iconMap[Icon] : Icon;
 
   return (
     <div className="min-h-screen bg-background">
@@ -53,35 +64,40 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
         <div className="absolute inset-0 bg-mesh opacity-20"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <Link to="/">
-              <Button variant="ghost" className="mb-8 text-white hover:bg-white/10">
+            <Link href="/">
+              <Button
+                variant="ghost"
+                className="mb-8 text-white hover:bg-white/10"
+              >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
               </Button>
             </Link>
-            
-            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${bgColor} mx-auto mb-8 shadow-premium`}>
-              <Icon className={`h-10 w-10 ${color}`} />
+
+            <div
+              className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${bgColor} mx-auto mb-8 shadow-premium`}
+            >
+              {IconComponent && (
+                <IconComponent className={`h-10 w-10 ${color}`} />
+              )}
             </div>
-            
+
             <h1 className="text-2xl lg:text-4xl font-display font-bold text-white mb-6">
               {title}
             </h1>
             <p className="text-md lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
               {description}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-            <HashLink smooth to="#pricing">
-              <Button className="btn-premium text-lg">
-                Get Started Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </HashLink>
-              <Link to="/pages/contact">
-                <Button className="text-lg">
-                  Request Quote
+              <Link href="#pricing">
+                <Button className="btn-premium text-lg">
+                  Get Started Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
+              </Link>
+              <Link href="/contact">
+                <Button className="text-lg">Request Quote</Button>
               </Link>
             </div>
           </div>
@@ -97,9 +113,14 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-4 p-4 glass-card rounded-2xl">
+                <div
+                  key={index}
+                  className="flex items-center space-x-4 p-4 glass-card rounded-2xl"
+                >
                   <CheckCircle2 className={`h-6 w-6 ${color} flex-shrink-0`} />
-                  <span className="text-md md:text-lg text-neutral-700">{feature}</span>
+                  <span className="text-md md:text-lg text-neutral-700">
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
@@ -117,12 +138,18 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
             <div className="space-y-8">
               {process.map((step, index) => (
                 <div key={index} className="flex items-start space-x-6">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-full ${bgColor} flex items-center justify-center font-bold text-lg ${color}`}>
+                  <div
+                    className={`flex-shrink-0 w-12 h-12 rounded-full ${bgColor} flex items-center justify-center font-bold text-lg ${color}`}
+                  >
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-md md:text-xl font-semibold mb-2">{step.step}</h3>
-                    <p className="text-neutral-600 text-sm md:text-lg leading-relaxed">{step.description}</p>
+                    <h3 className="text-md md:text-xl font-semibold mb-2">
+                      {step.step}
+                    </h3>
+                    <p className="text-neutral-600 text-sm md:text-lg leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -133,7 +160,7 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
 
       {/* Pricing Section */}
       {pricing && (
-        <section className="py-20 bg-neutral-50/50"  id='pricing'>
+        <section className="py-20 bg-neutral-50/50" id="pricing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-2xl lg:text-3xl font-display font-bold text-center mb-12">
@@ -143,13 +170,19 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
                 {pricing.map((plan, index) => (
                   <Card key={index} className="service-card-premium border-0">
                     <CardHeader className="text-center pb-6">
-                      <CardTitle className="text-2xl font-display font-bold mb-4">{plan.plan}</CardTitle>
-                      <div className="text-2xl md:text-4xl font-bold text-primary">{plan.price}</div>
+                      <CardTitle className="text-2xl font-display font-bold mb-4">
+                        {plan.plan}
+                      </CardTitle>
+                      <div className="text-2xl md:text-4xl font-bold text-primary">
+                        {plan.price}
+                      </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       {plan.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
-                          <CheckCircle2 className={`h-5 w-5 ${color} flex-shrink-0`} />
+                          <CheckCircle2
+                            className={`h-5 w-5 ${color} flex-shrink-0`}
+                          />
                           <span className="text-neutral-600">{feature}</span>
                         </div>
                       ))}
@@ -168,14 +201,13 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
         </section>
       )}
 
-
- {/* Modal Component */}
- <ChoosePlanModal
-  isOpen={isModalOpen}
-  onClose={() => setIsModalOpen(false)}
-  selectedPlan={selectedPlan}
-  selectedService={selectedService}
-/>
+      {/* Modal Component */}
+      <ChoosePlanModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        selectedPlan={selectedPlan}
+        selectedService={selectedService}
+      />
 
       {/* Testimonial Section */}
       {testimonial && (
@@ -186,14 +218,19 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
                 <CardContent className="p-12">
                   <div className="flex justify-center mb-6">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-6 w-6 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
                   <blockquote className="text-md lg:text-2xl text-neutral-700 leading-relaxed mb-8">
                     "{testimonial.content}"
                   </blockquote>
                   <div>
-                    <div className="font-semibold text-lg text-neutral-800">{testimonial.name}</div>
+                    <div className="font-semibold text-lg text-neutral-800">
+                      {testimonial.name}
+                    </div>
                     <div className="text-neutral-600">{testimonial.role}</div>
                   </div>
                 </CardContent>
@@ -214,16 +251,15 @@ const handleChoosePlan = (planName: string, serviceName: string) => {
               Let's discuss your project and create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <HashLink smooth to='#pricing'>
-
-              <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 rounded-2xl text-lg">
-                Start Your Project
-              </Button>
-              </HashLink>
-              <Link to="/schedule-consultation">
-              <Button className=" border-white text-white hover:bg-white hover:text-primary">
-                Schedule Consultation
-              </Button>
+              <Link href="#pricing">
+                <Button className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 rounded-2xl text-lg">
+                  Start Your Project
+                </Button>
+              </Link>
+              <Link href="/schedule-consultation">
+                <Button className=" border-white text-white hover:bg-white hover:text-primary">
+                  Schedule Consultation
+                </Button>
               </Link>
             </div>
           </div>

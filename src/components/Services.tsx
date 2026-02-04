@@ -1,16 +1,35 @@
+"use client";
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import BookOpen from 'lucide-react/dist/esm/icons/book-open';
-import Code from 'lucide-react/dist/esm/icons/code';
-import ShoppingCart from 'lucide-react/dist/esm/icons/shopping-cart';
-import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
-import Sparkles from 'lucide-react/dist/esm/icons/sparkles';
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import BookOpen from "lucide-react/dist/esm/icons/book-open";
+import Code from "lucide-react/dist/esm/icons/code";
+import ShoppingCart from "lucide-react/dist/esm/icons/shopping-cart";
+import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
+import Sparkles from "lucide-react/dist/esm/icons/sparkles";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+
+    const el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [searchParams]);
   const services = [
     {
       id: 2,
@@ -22,19 +41,18 @@ const Services = () => {
       gradientFrom: "from-accent-lilac/20",
       gradientTo: "to-accent-lilac/5",
       link: "/ecommerce",
-     
     },
     {
       id: 1,
       title: "Front-End Development",
-      description: "Modern, responsive applications with cutting-edge technology",
+      description:
+        "Modern, responsive applications with cutting-edge technology",
       icon: Code,
       color: "text-accent-teal",
       bgColor: "bg-accent-teal/10",
       gradientFrom: "from-accent-teal/20",
       gradientTo: "to-accent-teal/5",
       link: "/frontend",
-      
     },
     {
       id: 0,
@@ -46,8 +64,7 @@ const Services = () => {
       gradientFrom: "from-accent-coral/20",
       gradientTo: "to-accent-coral/5",
       link: "/academicswriting",
-      
-    }
+    },
   ];
 
   return (
@@ -61,11 +78,14 @@ const Services = () => {
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-display font-bold mb-8 text-balance">
             Comprehensive Solutions for
-            <span className="block m-1 text-gradient-premium">Every Digital Need</span>
+            <span className="block m-1 text-gradient-premium">
+              Every Digital Need
+            </span>
           </h2>
           <p className="text-md lg:text-xl text-neutral-600 max-w-4xl mx-auto leading-relaxed">
-            We offer three specialized service areas, each designed to deliver exceptional results
-            and help you achieve your goals with premium quality and professional excellence.
+            We offer three specialized service areas, each designed to deliver
+            exceptional results and help you achieve your goals with premium
+            quality and professional excellence.
           </p>
         </div>
 
@@ -80,17 +100,25 @@ const Services = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="text-center pb-6 relative">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} rounded-t-2xl`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} rounded-t-2xl`}
+                  ></div>
                   <div className="relative">
-                    <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${service.bgColor} mx-auto mb-6 shadow-medium`}>
+                    <div
+                      className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl ${service.bgColor} mx-auto mb-6 shadow-medium`}
+                    >
                       <IconComponent className={`h-10 w-10 ${service.color}`} />
                     </div>
-                    <CardTitle className="text-2xl lg:text-3xl font-display font-bold mb-4">{service.title}</CardTitle>
-                    <CardDescription className="text-base text-neutral-600 leading-relaxed">{service.description}</CardDescription>
+                    <CardTitle className="text-2xl lg:text-3xl font-display font-bold mb-4">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-base text-neutral-600 leading-relaxed">
+                      {service.description}
+                    </CardDescription>
                   </div>
                 </CardHeader>
                 <CardContent className="text-center relative">
-                  <Link to={service.link}>
+                  <Link href={service.link}>
                     <Button
                       variant="outline"
                       className="group transition-all duration-300 btn-outline-premium"
@@ -107,7 +135,6 @@ const Services = () => {
             );
           })}
         </div>
-
       </div>
     </section>
   );

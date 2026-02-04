@@ -1,39 +1,66 @@
+"use client";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import Menu from "lucide-react/dist/esm/icons/menu";
+import X from "lucide-react/dist/esm/icons/x";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import logo6_1 from "@/assets/logo6_1.webp";
 
-import { useState, useEffect } from 'react';
-import Menu from 'lucide-react/dist/esm/icons/menu';
-import X from 'lucide-react/dist/esm/icons/x';
-import { HashLink } from 'react-router-hash-link';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import logo6_1 from "@/assets/logo6_1.webp"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const pathname = usePathname();
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Smooth scroll handler for hash links
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string,
+  ) => {
+    e.preventDefault();
+
+    // If already on home page → just scroll
+    if (pathname === "/") {
+      document.getElementById(targetId)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      // Navigate to home with hash
+      router.push(`/#${targetId}`);
+    }
+
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-card shadow-premium' : 'bg-transparent'
-      }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "glass-card shadow-premium" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/">
-              <img
+            <Link href="/">
+              <Image
                 src={logo6_1}
                 alt="Solution Office Logo"
                 width="512"
                 height="128"
                 className="w-48 sm:w-56 md:w-64"
               />
-
             </Link>
             {/* <div className="text-md sm:text-xl font-display font-bold text-gradient-premium">
               Solution Office 24/7
@@ -42,17 +69,35 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
-            <Link to="/" className="nav-link px-4 py-2 text-sm">Home</Link>
-            <Link to="/ecommerce" className="nav-link px-4 py-2  text-sm">E-commerce</Link>
-            <Link to="/frontend" className="nav-link px-4 py-2 text-sm">Web Development</Link>
-            <Link to="/academicswriting" className="nav-link py-2 text-sm">Academics Writing</Link>
-            <Link to="/about" className="nav-link px-4 py-2 text-sm">About</Link>
-            <Link to="/pages/contact" className="nav-link px-4 py-2 text-sm">Contact</Link>
+            <Link href="/" className="nav-link px-4 py-2 text-sm">
+              Home
+            </Link>
+            <Link href="/ecommerce" className="nav-link px-4 py-2  text-sm">
+              E-commerce
+            </Link>
+            <Link href="/frontend" className="nav-link px-4 py-2 text-sm">
+              Web Development
+            </Link>
+            <Link href="/academicswriting" className="nav-link py-2 text-sm">
+              Academics Writing
+            </Link>
+            <Link href="/about" className="nav-link px-4 py-2 text-sm">
+              About
+            </Link>
+            <Link href="/contact" className="nav-link px-4 py-2 text-sm">
+              Contact
+            </Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex">
-            <HashLink smooth to="/#services" className="btn-premium p-3 m-3 text-sm">Get Started</HashLink>
+            <Link
+              href="/"
+              onClick={(e) => handleSmoothScroll(e, "services")}
+              className="btn-premium p-3 m-3 text-sm"
+            >
+              Get Started
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,12 +110,11 @@ const Header = () => {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"} // 👈 Dynamic label
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />   // 👈 Hide decorative icons
+                <X className="h-6 w-6" aria-hidden="true" /> // 👈 Hide decorative icons
               ) : (
                 <Menu className="h-6 w-6" aria-hidden="true" />
               )}
             </Button>
-
           </div>
         </div>
 
@@ -78,27 +122,56 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="glass-card px-2 pb-3 rounded-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
-              <Link to="/" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
-              <Link to="/ecommerce" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/ecommerce"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 E-commerce
               </Link>
-              <Link to="/frontend" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/frontend"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Web Development
               </Link>
-              <Link to="/academicswriting" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/academicswriting"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Academics Writing
               </Link>
-              <Link to="/about" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/about"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 About
               </Link>
-              <Link to="/pages/contact" className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/contact"
+                className="block px-3 py-2 text-foreground hover:text-primary transition-colors text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact
               </Link>
               <div className="px-3 py-2">
-
-                <HashLink smooth to="/#services" className="btn-premium p-2 text-xs w-full" onClick={() => setIsMenuOpen(false)}>Get Started</HashLink>
+                <Link
+                  href="/#services"
+                  onClick={(e) => handleSmoothScroll(e, "services")}
+                  className="btn-premium p-2 text-xs w-full"
+                >
+                  Get Started
+                </Link>
               </div>
             </div>
           </div>

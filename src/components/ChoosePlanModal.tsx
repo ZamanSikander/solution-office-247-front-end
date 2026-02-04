@@ -1,6 +1,7 @@
-import { useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { executeRecaptcha } from '@/lib/recaptcha';
+"use client";
+import { useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { executeRecaptcha } from "@/lib/recaptcha";
 
 interface ChoosePlanModalProps {
   isOpen: boolean;
@@ -14,20 +15,28 @@ interface FormData {
   email: string;
 }
 
-const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, selectedPlan, selectedService }) => {
-  const [formData, setFormData] = useState<FormData>({ name: '', email: '' });
+const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({
+  isOpen,
+  onClose,
+  selectedPlan,
+  selectedService,
+}) => {
+  const [formData, setFormData] = useState<FormData>({ name: "", email: "" });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleInputChange = useCallback((field: keyof FormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
-    if (error) setError(null);
-  }, [error]);
+  const handleInputChange = useCallback(
+    (field: keyof FormData, value: string) => {
+      setFormData((prev) => ({ ...prev, [field]: value }));
+      // Clear error when user starts typing
+      if (error) setError(null);
+    },
+    [error],
+  );
 
   const resetForm = useCallback(() => {
-    setFormData({ name: '', email: '' });
+    setFormData({ name: "", email: "" });
     setError(null);
     setSuccess(false);
   }, []);
@@ -37,55 +46,61 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
     onClose();
   }, [resetForm, onClose]);
 
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name.trim() || !formData.email.trim()) {
-      setError('Please fill in all fields');
-      return;
-    }
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
 
-    if (!formData.email.includes('@')) {
-      setError('Please enter a valid email address');
-      return;
-    }
-
-    setSubmitting(true);
-    setError(null);
-
-    try {
-      const recaptchaToken = await executeRecaptcha('plan_submit');
-      const response = await fetch('https://solution-office-247-back-end.vercel.app/sendPlan', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          name: formData.name.trim(), 
-          email: formData.email.trim(), 
-          plan: selectedPlan,
-          service: selectedService,
-          recaptchaToken,
-          recaptchaAction: 'plan_submit'
-        }),
-      });
-
-      if (response.ok) {
-        setSuccess(true);
-        // Auto-close after 3 seconds
-        setTimeout(() => {
-          handleClose();
-        }, 3000);
-      } else {
-        const errorData = await response.json().catch(() => ({}));
-        setError(errorData.message || 'Submission failed. Please try again.');
+      // Basic validation
+      if (!formData.name.trim() || !formData.email.trim()) {
+        setError("Please fill in all fields");
+        return;
       }
-    } catch (error) {
-      console.error('Submission error:', error);
-      setError('Network error. Please check your connection and try again.');
-    } finally {
-      setSubmitting(false);
-    }
-  }, [formData, selectedPlan, selectedService, handleClose]);
+
+      if (!formData.email.includes("@")) {
+        setError("Please enter a valid email address");
+        return;
+      }
+
+      setSubmitting(true);
+      setError(null);
+
+      try {
+        const recaptchaToken = await executeRecaptcha("plan_submit");
+        const response = await fetch(
+          "https://solution-office-247-back-end.vercel.app/sendPlan",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: formData.name.trim(),
+              email: formData.email.trim(),
+              plan: selectedPlan,
+              service: selectedService,
+              recaptchaToken,
+              recaptchaAction: "plan_submit",
+            }),
+          },
+        );
+
+        if (response.ok) {
+          setSuccess(true);
+          // Auto-close after 3 seconds
+          setTimeout(() => {
+            handleClose();
+          }, 3000);
+        } else {
+          const errorData = await response.json().catch(() => ({}));
+          setError(errorData.message || "Submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Submission error:", error);
+        setError("Network error. Please check your connection and try again.");
+      } finally {
+        setSubmitting(false);
+      }
+    },
+    [formData, selectedPlan, selectedService, handleClose],
+  );
 
   return (
     <AnimatePresence>
@@ -121,7 +136,7 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
             </p>
 
             {success ? (
-              <motion.div 
+              <motion.div
                 className="text-green-600 font-medium text-center py-6"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -129,12 +144,14 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
               >
                 <div className="text-4xl mb-2">✅</div>
                 <div>Your request has been sent!</div>
-                <div className="text-sm text-gray-600 mt-1">We'll contact you shortly.</div>
+                <div className="text-sm text-gray-600 mt-1">
+                  We'll contact you shortly.
+                </div>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {error && (
-                  <motion.div 
+                  <motion.div
                     className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -144,14 +161,17 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
                 )}
 
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Name *
                   </label>
                   <input
                     id="name"
                     type="text"
                     value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    onChange={(e) => handleInputChange("name", e.target.value)}
                     placeholder="Enter your full name"
                     required
                     className="mt-1 block w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none transition-colors duration-200"
@@ -160,14 +180,17 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Email *
                   </label>
                   <input
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
                     placeholder="Enter your email address"
                     required
                     className="mt-1 block w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none transition-colors duration-200"
@@ -176,7 +199,10 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
                 </div>
 
                 <div>
-                  <label htmlFor="plan" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="plan"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Selected Plan
                   </label>
                   <input
@@ -190,7 +216,10 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="service"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Selected Service
                   </label>
                   <input
@@ -210,14 +239,30 @@ const ChoosePlanModal: React.FC<ChoosePlanModalProps> = ({ isOpen, onClose, sele
                 >
                   {submitting ? (
                     <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
                       </svg>
                       Submitting...
                     </span>
                   ) : (
-                    'Submit Request'
+                    "Submit Request"
                   )}
                 </button>
               </form>
