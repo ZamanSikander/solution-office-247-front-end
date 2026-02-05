@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///E:/projects/solution-office-247-front-end/src/app/page.tsx"],"sourcesContent":["import \"./global.css\";\r\nimport \"./page.css\";\r\nexport default function Page() {\r\n  return <div className=\"min-h-screen bg-background\">\r\n      <Helmet>\r\n        <title>\r\n          Freelance Web Developer, Writer & eCommerce Assistant | Solution Office 24/7\r\n        </title>\r\n        <meta\r\n          name=\"description\"\r\n          content=\"Hire a skilled freelance web developer, academic writer, and eCommerce store manager. Get expert front-end development, writing, and online store support.\"\r\n        />\r\n        <link rel=\"canonical\" href=\"https://solutionoffice247.com\" />\r\n      </Helmet>\r\n\r\n      <Header />\r\n      <Hero />\r\n      <Services />\r\n      <WhyChooseUs />\r\n      <Testimonials />\r\n      <Contact />\r\n      <Footer />\r\n    </div>\r\n}"],"names":[],"mappings":";;;;;;;;AAEe,SAAS;IACtB,qBAAO,8OAAC;QAAI,WAAU;;0BAClB,8OAAC;;kCACC,8OAAC;kCAAM;;;;;;kCAGP,8OAAC;wBACC,MAAK;wBACL,SAAQ;;;;;;kCAEV,8OAAC;wBAAK,KAAI;wBAAY,MAAK;;;;;;;;;;;;0BAG7B,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;;;;;;;AAEP"}}]
-}
