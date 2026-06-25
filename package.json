@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "next build",
     "build:dev": "next build --mode development",
     "lint": "eslint .",
-    "preview": "next preview",
+    "preview": "npx serve out",
     "start": "next start"
   },
   "dependencies": {

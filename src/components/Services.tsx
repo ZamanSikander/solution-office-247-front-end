@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import BookOpen from "lucide-react/dist/esm/icons/book-open";
 import Code from "lucide-react/dist/esm/icons/code";
@@ -19,8 +18,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
-  const searchParams = useSearchParams();
-
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     if (!hash) return;
@@ -29,7 +26,7 @@ const Services = () => {
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }, [searchParams]);
+  }, []);
   const services = [
     {
       id: 2,

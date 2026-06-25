@@ -14,6 +14,23 @@ const BLOG_QUERY = `
   }
 `;
 
+const BLOG_SLUGS_QUERY = `
+  *[_type == "post" && defined(slug.current)] {
+    "slug": slug.current
+  }
+`;
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const posts = await client.fetch(BLOG_SLUGS_QUERY);
+
+  return posts.map((post: { slug: string }) => ({
+    slug: post.slug,
+  }));
+}
+
 export default async function BlogPostPage({
   params,
 }: {

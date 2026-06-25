@@ -1,14 +1,13 @@
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+Options -MultiViews
 
-# Example redirects
-Redirect 301 /services/pages/frontend /frontend
-Redirect 301 /services/pages/academicswriting /academicswriting
-Redirect 301 /services/pages/ecommerce /ecommerce
+DirectoryIndex index.html
+
+ErrorDocument 404 /404.html
+
+# Existing redirects
+Redirect 301 /services/pages/frontend /frontend/
+Redirect 301 /services/pages/academicswriting /academicswriting/
+Redirect 301 /services/pages/ecommerce /ecommerce/
 
 # Redirect all HTTP to HTTPS
 RewriteEngine On

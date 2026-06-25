@@ -12,8 +12,10 @@ const BLOGS_QUERY = `
   }
 `;
 
+export const dynamic = "force-static";
+
 export default async function BlogPage() {
-  const blogs = await client.fetch(BLOGS_QUERY, { next: { revalidate: 10 } });
+  const blogs = await client.fetch(BLOGS_QUERY);
 
   return <BlogList blogs={blogs} />;
 }
